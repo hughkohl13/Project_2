@@ -2,4 +2,6 @@
 
 Collaborators:
 Hugh Kohl
-Wlad 
+Wlad Paiva
+Gilles
+Mervin Serviano
