@@ -1,3 +1,5 @@
 # Project_2
 
-Wlad's repo
+Collaborators:
+Hugh Kohl
+Wlad 
