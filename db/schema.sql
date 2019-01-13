@@ -58,5 +58,5 @@ ALTER TABLE ITEMS
 ADD FOREIGN KEY items_fk3(borrower_id)
   REFERENCES users(id);
 ALTER TABLE ITEMS
-ADD FOREIGN KEY items_fk4(borrower_id)
-  REFERENCES users(id);
+ADD FOREIGN KEY items_fk4(image_id)
+  REFERENCES images(id);
