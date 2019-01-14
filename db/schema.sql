@@ -9,6 +9,11 @@ CREATE TABLE IMAGES (
   id INT NOT NULL AUTO_INCREMENT,
   name VARCHAR(150) not null,
   path VARCHAR(1000),
+  originalname VARCHAR(150),
+  mimetype VARCHAR(150),
+  destination VARCHAR(255),
+  size INT,
+  createdAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (id)
 );
 
@@ -20,6 +25,7 @@ CREATE TABLE USERS (
   email      VARCHAR(100) not null,
   zip_code   VARCHAR(5),
   address    VARCHAR(255),
+  createdAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (id)
 );
 
@@ -27,6 +33,7 @@ DROP TABLE IF EXISTS CATEGORIES;
 CREATE TABLE CATEGORIES (
   id INT NOT NULL AUTO_INCREMENT,
   name VARCHAR(100) not null,
+  createdAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP,  
   PRIMARY KEY (id)
 );
 
@@ -45,6 +52,7 @@ CREATE TABLE ITEMS (
   penalty DECIMAL(9,2),
   serial_number VARCHAR(100),
   cost DECIMAL(9,2),
+  createdAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (id)
 );
 
