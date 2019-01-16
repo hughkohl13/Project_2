@@ -1,0 +1,36 @@
+DROP DATABASE IF EXISTS StufferDB;
+
+CREATE DATABASE StufferDB;
+
+USE StufferDB;
+
+CREATE TABLE items (
+    Id  INT NOT NULL AUTO_INCREMENT,
+    Name VARCHAR(100) NOT NULL,
+    Description VARCHAR(300) NOT NULL,
+    Owner_id INT NOT NULL AUTO_INCREMENT,
+    Borrower_id IN NOT NULL AUTO_INCREMENT,
+    Start_date DATE,
+    End_date DATE,
+    PRIMARY KEY (id)
+);
+
+CREATE TABLE users (
+    id INT NOT NULL AUTO_INCREMENT,
+    First_name VARCHAR(30) NOT NULL,
+    Last_name VARCHAR(30) NOT NULL,
+    City VARCHAR(30) NOT NULL,
+    PRIMARY KEY (id)
+);
+
+CREATE TABLE categories (
+    id INT NOT NULL AUTO_INCREMENT,
+    Name VARCHAR(40) NOT NULL,
+    PRIMARY KEY (id)
+);
+
+CREATE TABLE images (
+    id INT NOT NULL AUTO_INCREMENT.
+    Photo BLOB(2G),
+    PRIMARY KEY (id)
+);
