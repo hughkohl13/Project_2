@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 -- ITEMS TABLE
 -- ===========
 
@@ -64,7 +63,10 @@ VALUES ();
 
 INSERT INTO images (BLOB)
 VALUES ();
-=======
+
+
+
+
 INSERT INTO CATEGORIES (name) VALUES ('Bathroom');
 INSERT INTO CATEGORIES (name) VALUES ('Bedroom');
 INSERT INTO CATEGORIES (name) VALUES ('Books');
@@ -89,4 +91,3 @@ INSERT INTO CATEGORIES (name) VALUES ('Secondary Storage');
 INSERT INTO CATEGORIES (name) VALUES ('Small Storage');
 INSERT INTO CATEGORIES (name) VALUES ('Textiles and Rugs');
 
->>>>>>> 2416b176b562572ed8ea896c098289b6c00eba26
