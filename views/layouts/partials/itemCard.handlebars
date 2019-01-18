@@ -1,0 +1,10 @@
+<li>
+    {{image}}
+	{{name}}
+
+	<button class="borrow" data-id="{{id}}" data-available="{{available}}">
+		{{#if available}}Borrow{{else}}WAKE UP!{{/if}}
+	</button>
+
+	<button class="edit-post" data-id="{{this.id}}">Edit</button>
+</li>

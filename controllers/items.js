@@ -3,10 +3,11 @@ var express = require("express");
 var router = express.Router();
 
 // Import the model (stuffer.js) to use its database functions.
-var stuffer = require("../models/stuffer.js");
+var items = require("../models/items.js");
+
 
 router.get("/", function(req, res) {
-    stuffer.all(function(data) {
+    items.all(function(data) {
       var showItems = {
         items: data
       };

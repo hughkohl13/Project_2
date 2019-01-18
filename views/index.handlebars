@@ -1,13 +1,26 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-		<link rel="stylesheet" href="/assets/css/style.css" type="text/css" />
-		<title>Stuffer</title>
-		<script src="https://code.jquery.com/jquery.js"></script>
-		<script src="/assets/js/project_2.js"></script>
-	</head>
-	<body>
-		{{{ body }}}
-	</body>
-</html>
+<div class="container-fluid" id="">
+    <div class="container" id="">
+            Post Stuff
+    </div>
+        
+    <div class="container" id="">
+        Borrow Stuff
+    </div>
+</div>
+
+<h2>Posted</h2>
+
+<ul>
+  {{#each items}}
+      {{> itemCard}}
+  {{/each}}
+</ul>
+
+<h2>Borrowed</h2>
+
+<ul>
+  {{#each items}}
+      {{> itemCard}}
+  {{/each}}
+</ul>
+
