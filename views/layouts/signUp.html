@@ -42,11 +42,12 @@
 
 <!-- Post stuff and get stuff boxes inside a background container -->
 <div class="container-fluid">
-    <form class="form-inline">
-        <input class="form-control mr-sm-2" id="" type="search" placeholder="Name" aria-label="Search">
-        <input class="form-control mr-sm-2" id="" type="search" placeholder="Address" aria-label="Search">
-        <input class="form-control mr-sm-2" id="" type="search" placeholder="Unit / Apt" aria-label="Search">
-        <input class="form-control mr-sm-2" id="" type="search" placeholder="Postal" aria-label="Search">
+    <form class="form-inline" action="/signup" method='post' class='signup-form'>
+        <input class="form-control mr-sm-2" id="Name" type="search" placeholder="Name" aria-label="Search">
+        <input class="form-control mr-sm-2" id="Address" type="search" placeholder="Address" aria-label="Search">
+        <input class="form-control mr-sm-2" id="Apt" type="search" placeholder="Unit / Apt" aria-label="Search">
+        <input class="form-control mr-sm-2" id="Postal" type="search" placeholder="Postal" aria-label="Search">
+        <input class="form-control mr-sm-2" id="Number" type="search" placeholder="Number" aria-label="Search">
         <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
     </form>
 </div>
