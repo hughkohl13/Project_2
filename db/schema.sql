@@ -23,7 +23,8 @@ CREATE TABLE USERS (
   first_name VARCHAR(100) not null,
   last_name  VARCHAR(100) not null,
   email      VARCHAR(100) not null,
-  zip_code   VARCHAR(5),
+  password VARCHAR(100) not null,
+  postal   VARCHAR(5),
   address    VARCHAR(255),
   createdAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (id)

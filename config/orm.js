@@ -37,7 +37,7 @@ var orm = {
       cb(result);
     });
   },
-  owned: function(table, cols,vals, cb){
+  owned: function(cb){
   var queryString = "SELECT I.ITEM_NAME, C.NAME CATEGORY_NAME, IM.NAME IMAGE_NAME FROM ITEMS I INNER JOIN CATEGORIES C ON (C.ID = I.CATEGORY_ID) LEFT JOIN IMAGES IM ON (IM.ID = I.IMAGE_ID)";
   
   console.log(queryString);
