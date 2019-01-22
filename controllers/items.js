@@ -2,8 +2,8 @@ var express = require("express");
 
 var router = express.Router();
 
-// Import the model (stuffer.js) to use its database functions.
-var items = require("../models/items.js");
+// Import the model (item.js) to use its database functions.
+var items = require("../models/item.js");
 
 
 router.get("/", function(req, res) {
@@ -23,6 +23,9 @@ router.post("/api/item/", function(req, res) {
       req.body.item_name,
       req.body.description,
       req.body.category_id,
+      req.body.owner_id,
+      req.body.borrower_id,
+      req.body.image_id,
     ], function(result) {
       res.json({ id: result.insertId });
     });
@@ -30,11 +33,11 @@ router.post("/api/item/", function(req, res) {
 
 router.put("/api/item/:id", function(req, res) {
   var itemID = req.params.id
-  var condition = itemID;
+  // var condition = itemID;
 
-  console.log(condition);
+  console.log(itemID);
 
-  items.update(condition, function(result) {
+  items.update(itemID, function(result) {
     if (result.changedRows == 0) {
       return res.status(404).end();
     } else {
@@ -44,3 +47,6 @@ router.put("/api/item/:id", function(req, res) {
     }
   });
 });
+
+// Export routes for server.js to use.
+module.exports = router;
