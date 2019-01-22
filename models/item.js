@@ -1,7 +1,3 @@
-// Contains boilerplate code to handle user input from front end (which is sent through stufferController.js)
-// and sends it to orm so request can be understood by MySQL. MySQL is then read/updated accordingly.
-// Model defines what data the app should contain, it updates the app to reflect added item.
-
 // Import the ORM to create functions that will interact with the database.
 var orm = require("../config/orm.js");
 
