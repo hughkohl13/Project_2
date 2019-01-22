@@ -1,4 +1,4 @@
-// Contains boilerplate code to handle user input from front end (which is sent through stufferController.js)
+// Contains boilerplate code to handle user input from front end (which is sent through items.js)
 // and sends it to orm so request can be understood by MySQL. MySQL is then read/updated accordingly.
 // Model defines what data the app should contain, it updates the app to reflect added item.
 
@@ -25,8 +25,13 @@ var items = {
     orm.owned("items", function(res){
       cb(res);
     })
-  }
+  },
+  borrowed: function(cb) {
+    orm.borrowed("items", function(res) {
+      cb(res);
+    })
+  },
 };
 
-// Export the database functions to the controller (stufferController.js).
+// Export the database functions to the controller (items.js).
 module.exports = items;
