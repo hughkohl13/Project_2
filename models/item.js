@@ -1,3 +1,4 @@
+
 // Import the ORM to create functions that will interact with the database.
 var orm = require("../config/orm.js");
 
@@ -21,8 +22,13 @@ var items = {
     orm.owned("items", function(res){
       cb(res);
     })
-  }
+  },
+  borrowed: function(cb) {
+    orm.borrowed("items", function(res) {
+      cb(res);
+    })
+  },
 };
 
-// Export the database functions to the controller (stufferController.js).
+// Export the database functions to the controller (items.js).
 module.exports = items;
