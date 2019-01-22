@@ -46,21 +46,21 @@ var orm = {
     if (err) {
       throw err;
     }
-
+    
     cb(result);
   });
   },
   borrowed: function(cb){
-    var queryString = "SELECT I.ITEM_NAME, C.NAME CATEGORY_NAME, IM.NAME IMAGE_NAME FROM ITEMS I INNER JOIN CATEGORIES C ON (C.ID = I.CATEGORY_ID) LEFT JOIN IMAGES IM ON (IM.ID = I.IMAGE_ID)";
+    // var queryString = "SELECT I.ITEM_NAME, C.NAME CATEGORY_NAME, IM.NAME IMAGE_NAME FROM ITEMS I INNER JOIN CATEGORIES C ON (C.ID = I.CATEGORY_ID) LEFT JOIN IMAGES IM ON (IM.ID = I.IMAGE_ID)";
     
-    console.log(queryString);
-    connection.query(queryString, function(err, result) {
-      if (err) {
-        throw err;
-      }
-
-    cb(result);
-    });
+    // console.log(queryString);
+    // connection.query(queryString, function(err, result) {
+    //   if (err) {
+    //     throw err;
+    //   }
+    orm.owned(cb);
+    // cb(result);
+    // });
   },
   available: function(cb) {
     var queryString = "SELECT I.ITEM_NAME, C.NAME CATEGORY_NAME, IM.NAME IMAGE_NAME FROM ITEMS I INNER JOIN CATEGORIES C ON (C.ID = I.CATEGORY_ID) LEFT JOIN IMAGES IM ON (IM.ID = I.IMAGE_ID) WHERE I.OWNER_ID <> ? AND WHERE AVAILABLE_DATE IS NULL AND I.LOCATION = ? AND (? IS NULL OR CATEGORY_ID = ?) "
