@@ -2,11 +2,11 @@ var orm = require("../config/orm.js");
 
 var user = {
   all: function(cb) {
-    orm.all("users", function(res) {    //Posts to 'users' table
+    orm.all("users", function(res) {    
       cb(res);
     });
   },
-  create: function(cols, vals, cb) {
+  create: function(cols, vals, cb) {                     //Posts to 'users' table
     orm.create("users", cols, vals, function(res) {
       cb(res);
     });
@@ -16,16 +16,7 @@ var user = {
       cb(res);
     });
   },
-  owned: function(cb) {
-    orm.owned("users", function(res){
-      cb(res);
-    })
-  },
-  borrowed: function(cb) {
-      orm.borrowed(function(res){
-          cb(res);
-      })
-  }
 };
 
+// Export the database functions to the controller (user.js).
 module.export = user

@@ -18,7 +18,8 @@ router.get("/", function(req, res) {
 
 router.post("/api/item/", function(req, res) {
     items.create([
-      "item_name", "description", "category_id", "owner_id"
+      "item_name", "description", "category_id", "owner_id",
+      "borrower_id", "image_id"
     ], [
       req.body.item_name,
       req.body.description,
