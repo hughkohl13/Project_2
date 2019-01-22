@@ -1,8 +1,18 @@
 <li>
-    {{image}}
-	{{name}}
-	{{category}}
-	{{description}}
+	<div class="image" data-id="{{id}}">
+    	{{image}}
+	</div>
+	<div class="name" data-id="{{id}}">
+    	{{name}}
+	</div>
+
+	<div class="category" data-id="{{id}}">
+		{{category}}
+	</div>
+
+	<div class="description" data-id="{{id}}">
+		{{description}}
+	</div>
 
 	<button class="borrow" data-id="{{id}}" data-available="{{available}}">
 		{{#if available}}Borrow
