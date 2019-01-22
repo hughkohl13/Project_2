@@ -1,3 +1,33 @@
+<nav class="navbar navbar-expand-md navbar-light bg-light">
+    <!-- navbar items on the left -->
+    <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <img src="../public/assets/images/Stuffer_Logo.png" width="30" height="30" class="d-inline-block align-top" href="index.html" alt="">
+            </li>
+        </ul>
+    </div>
+    <!-- navbar items in the middle -->
+    <!-- <div class="mx-auto order-0">
+        <a class="navbar-brand mx-auto" href="#">Placeholder if we want it</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".dual-collapse2">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </div> -->
+    <!-- navbar items on the right -->
+    <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="#">Login</a>
+            </li>
+            <li class="nav-item active">
+                    <a class="nav-link" href="#">Sign Up</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+
 <div class="container-fluid" id="">
     <div class="container" id="">
             Post Stuff
@@ -8,11 +38,15 @@
     </div>
 </div>
 
-<h2>Posted</h2>
+{{#unless user}}
+    <h2>Posted</h2>
+{{/unless user}}
 
 <ul>
   {{#each items}}
-      {{> itemCard}}
+    {{#unless user}}
+      {{> itemCard/itemCardOwned}}
+    {{/unless user}}
   {{/each}}
 </ul>
 
@@ -20,7 +54,9 @@
 
 <ul>
   {{#each items}}
-      {{> itemCard}}
+    {{#unless user}}
+      {{> itemCard/itemCardBorrowed}}
+    {{/unless user}} 
   {{/each}}
 </ul>
 
