@@ -42,7 +42,7 @@ DROP TABLE IF EXISTS ITEMS;
 CREATE TABLE ITEMS (
   id INT NOT NULL AUTO_INCREMENT,
   item_name VARCHAR(150) not null,
-  category_id INT not null, "item_name"
+  category_id INT not null,
   owner_id INT not null,
   borrower_id INT,
   image_id INT,
