@@ -7,8 +7,8 @@ $(function() {
             item_name: $("#ite").val().trim()
         };
     
-        $.ajax("api/Stuffer/", {
-            type: "POST",
+        $.ajax("api/item/", {
+            type: "GET",
             data: newItem
         }).then(function() {
             console.log("Added!");
@@ -17,3 +17,4 @@ $(function() {
     })
     
     })
+
