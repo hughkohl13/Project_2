@@ -3,8 +3,10 @@
 <head>
 	<meta charset="UTF-8">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" type="text/css">
-		<link rel="stylesheet" href="/assets/css/style.css" type="text/css" />
-		<title>Stuffer</title>
+		<link rel="stylesheet" href="../public/assets/" type="text/css" />
+        <title>Stuffer</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css"> <!-- Semantic cdn for all-->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/components/button.css">
 		<script src="https://code.jquery.com/jquery.js"></script>
 		<script src="../public/assets/js/Stuffer.js"></script>
 </head>
@@ -41,7 +43,80 @@
 </nav>
 
 <!-- Post stuff and get stuff boxes inside a background container -->
-<div class="container-fluid" id="">
+
+
+<div class="ui container">
+    <div class="ui relaxed grid">
+        <div class="row">
+            <div class="eight wide column">
+                <button class="ui massive yellow button">Post Stuff</button>
+            </div>
+            <div class="eight wide column">                    
+                <button class="ui massive yellow button">Borrow Stuff</button>
+            </div>
+           </div>
+
+
+           <!-- CARDS-->
+
+           <!-- Owned -->
+
+           <div class="ui card">
+            <div class="content">
+                    <img src=https://images.homedepot-static.com/productImages/a7e66f32-ae9c-440c-bb2c-53628ff60672/svn/milwaukee-power-tool-combo-kits-2997-23po-64_1000.jpg" width="200" height="200"/>
+              <div class="left floated meta">Owned</div>
+            </div>
+
+            <div class="content">
+              <span class="left floated">
+                <!-- <i class="heart outline like icon"></i> -->
+                Description
+              </span>
+              <!-- <i class="comment icon"></i> -->
+              <!-- 3 comments -->
+            </div>
+
+            <div class="content">
+                <span class="right floated">
+                    <button class="circular ui basic button">Edit</button>
+                    <button class="circular ui basic button">Delete</button>
+                </span>
+            </div>
+
+            <!-- <div class="extra content">
+              <div class="ui large transparent left icon input">
+                <i class="heart outline icon"></i>
+                <input type="text" placeholder="Add Comment...">
+              </div>
+            </div> -->
+          </div>
+
+          <!--Borrowed -->
+
+          <div class="ui card">
+                <div class="content">
+                        <img src=https://images.homedepot-static.com/productImages/a7e66f32-ae9c-440c-bb2c-53628ff60672/svn/milwaukee-power-tool-combo-kits-2997-23po-64_1000.jpg" width="200" height="200"/>
+                  <div class="right floated meta">Borrowed</div>
+                </div>
+    
+                <div class="content">
+                  <span class="left floated">
+                    <!-- <i class="heart outline like icon"></i> -->
+                    Description
+                  </span>
+                  <!-- <i class="comment icon"></i> -->
+                  <!-- 3 comments -->
+                </div>
+    
+                <div class="content">
+                        <button class="ui orange button">Borrow</button>
+                        </div>
+    
+              </div>
+    
+
+
+<!-- <div class="container-fluid" id="">
     <div class="container" id="">
             Post Stuff
     </div>
@@ -49,8 +124,8 @@
     <div class="container" id="">
         Borrow Stuff
     </div>
-</div>
+</div> -->
 
-    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"></script> <!-- Semantic cdn for js-->
 </body>
 </html>
