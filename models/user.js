@@ -2,7 +2,7 @@ var orm = require("../config/orm.js");
 
 var user = {
   all: function(cb) {
-    orm.all("users", function(res) {    //Posts to 'items' table
+    orm.all("users", function(res) {    //Posts to 'users' table
       cb(res);
     });
   },
