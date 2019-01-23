@@ -2,130 +2,167 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" type="text/css">
-		<link rel="stylesheet" href="../public/assets/" type="text/css" />
+        <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" type="text/css"> -->
+		
         <title>Stuffer</title>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css"> <!-- Semantic cdn for all-->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/components/button.css">
+        <link rel="stylesheet" href="../public/assets/css/styles.css" type="text/css">
 		<script src="https://code.jquery.com/jquery.js"></script>
-		<script src="../public/assets/js/Stuffer.js"></script>
+		<script src="../public/assets/js/index.js"></script>
 </head>
 
-<body>
-<!-- navbar setup -->
-<nav class="navbar navbar-expand-md navbar-light bg-light">
-    <!-- navbar items on the left -->
-    <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
-        <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-                <img src="../public/assets/images/Stuffer_Logo.png" width="30" height="30" class="d-inline-block align-top" href="index.html" alt="">
-            </li>
-        </ul>
+<body body data-gr-c-s-loaded="true" class="pushable">
+<!-- Following menu -->
+<div class="ui large top fixed menu transition hidden">
+    <div class="ui container">
+        <a class="active item">Home</a>
+        <a class="item">Work</a>
+        <a class="item">Company</a>
+        <a class="item">Careers</a>
     </div>
-    <!-- navbar items in the middle -->
-    <!-- <div class="mx-auto order-0">
-        <a class="navbar-brand mx-auto" href="#">Placeholder if we want it</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".dual-collapse2">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-    </div> -->
-    <!-- navbar items on the right -->
-    <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
-        <ul class="navbar-nav ml-auto">
-            <li class="nav-item active">
-                <a class="nav-link" href="#">Login</a>
-            </li>
-            <li class="nav-item active">
-                    <a class="nav-link" href="#">Sign Up</a>
-            </li>
-        </ul>
     </div>
-</nav>
+
+<!-- Sidebar menu -->
+<div class="ui vertical inverted sidebar menu left">
+    <a class="active item">...</a>
+    <a class="active item">...</a>
+    <a class="active item">...</a>
+    <a class="active item">...</a>
+    </div>
+
+<!-- page contents -->
+<div class="pusher">
+    <div class="ui inverted vertical masthead center aligned segment" style>
+        <div class="ui container">
+            <div class="ui large secondary inverted pointing menu">
+                <a class="toc item">
+                    <i class="sidebar icon"></i>
+                </a>
+                <a class="active item">Home</a>
+                <a class="item">Posted Stuff</a>
+                <a class="item">Borrowed Stuff</a>
+                <a class="item">Contact</a>
+                <div class="right item">
+                    <a class="ui inverted button" style> Log in</a>
+                    <a class="ui inverted button">Sign Up</a>
+                </div>
+            </div>
+        </div>
+        <div class="ui text Container" style>
+            <h1 class="ui inverted header" style>
+                Stuffer
+            </h1>
+            <h2 style> Just Stuff it!</h2>
+            <div class="ui huge primary button">
+                <i class="left arrow icon">
+                </i>
+                Post Stuff
+            </div>
+            <div class="ui huge primary button">
+                Borrow Stuff
+                <i class="right arrow icon">
+                </i>
+            </div>
+        </div>
+    </div>
+    <div class="ui vertical stripe segment">
+        <div class="ui middle aligned stackable grid container">
+            <div class="row">
+                <div class="eight wide column">
+                    <h3 class="ui header"> We Help you expand your shed for free</h3>
+                    <p>
+                        "We can give your company superpowers to do things that they never thought possible. Let us delight your customers and empower your needs...through pure data analytics."
+                    </p>
+                </div>
+                <div class="six wide right floated column">
+                    <img src="../public/assets/images/Stuffer_Logo.png" class="ui large bordered rounded image">
+                </div>
+            </div>
+            <div class="row">
+
+            </div>
+        </div>
+    </div>
+
+               <!-- CARDS-->
+
+           <!-- Owned -->
+
+    <div class="ui card">
+        <div class="content">
+                <img src=https://images.homedepot-static.com/productImages/a7e66f32-ae9c-440c-bb2c-53628ff60672/svn/milwaukee-power-tool-combo-kits-2997-23po-64_1000.jpg" width="200" height="200"/>
+            <div class="left floated meta">Owned</div>
+        </div>
+        
+        <div class="content">
+            <span class="left floated"> 
+            <i class="heart outline like icon"></i>
+             Description
+            </span> 
+            <i class="comment icon"></i>
+            3 comments 
+        </div>
+        
+        <div class="content">
+            <span class="right floated">
+                <button class="circular ui basic button">Edit</button>
+                <button class="circular ui basic button">Delete</button>
+            </span>
+        </div>
+        
+        </div>
+        
+        <!--Borrowed -->
+        
+        <div class="ui card">
+            <div class="content">
+                    <img src=https://images.homedepot-static.com/productImages/a7e66f32-ae9c-440c-bb2c-53628ff60672/svn/milwaukee-power-tool-combo-kits-2997-23po-64_1000.jpg" width="200" height="200"/>
+                <div class="right floated meta">Borrowed</div>
+            </div>
+        
+            <div class="content">
+                <span class="left floated"> 
+                <i class="heart outline like icon"></i>
+                Description
+                </span>
+                <i class="comment icon"></i>
+                3 comments
+            </div>
+        
+            <div class="content">
+                    <button class="ui toggle orange button active"> Borrow</button>
+                    </div>
+        
+        </div>
+</div>
+
+
+
 
 <!-- Post stuff and get stuff boxes inside a background container -->
 
 
-<div class="ui container">
-    <div class="ui relaxed grid">
-        <div class="row">
-            <div class="eight wide column">
-                <button class="ui massive yellow button">Post Stuff</button>
-            </div>
-            <div class="eight wide column">                    
-                <button class="ui massive yellow button">Borrow Stuff</button>
-            </div>
-           </div>
 
+ /
 
-           <!-- CARDS-->
+<!-- Search for objects -->
 
-           <!-- Owned -->
-
-           <div class="ui card">
-            <div class="content">
-                    <img src=https://images.homedepot-static.com/productImages/a7e66f32-ae9c-440c-bb2c-53628ff60672/svn/milwaukee-power-tool-combo-kits-2997-23po-64_1000.jpg" width="200" height="200"/>
-              <div class="left floated meta">Owned</div>
-            </div>
-
-            <div class="content">
-              <span class="left floated">
-                <!-- <i class="heart outline like icon"></i> -->
-                Description
-              </span>
-              <!-- <i class="comment icon"></i> -->
-              <!-- 3 comments -->
-            </div>
-
-            <div class="content">
-                <span class="right floated">
-                    <button class="circular ui basic button">Edit</button>
-                    <button class="circular ui basic button">Delete</button>
-                </span>
-            </div>
-
-            <!-- <div class="extra content">
-              <div class="ui large transparent left icon input">
-                <i class="heart outline icon"></i>
-                <input type="text" placeholder="Add Comment...">
-              </div>
-            </div> -->
-          </div>
-
-          <!--Borrowed -->
-
-          <div class="ui card">
-                <div class="content">
-                        <img src=https://images.homedepot-static.com/productImages/a7e66f32-ae9c-440c-bb2c-53628ff60672/svn/milwaukee-power-tool-combo-kits-2997-23po-64_1000.jpg" width="200" height="200"/>
-                  <div class="right floated meta">Borrowed</div>
-                </div>
-    
-                <div class="content">
-                  <span class="left floated">
-                    <!-- <i class="heart outline like icon"></i> -->
-                    Description
-                  </span>
-                  <!-- <i class="comment icon"></i> -->
-                  <!-- 3 comments -->
-                </div>
-    
-                <div class="content">
-                        <button class="ui toggle orange button active"> Borrow</button>
-                        </div>
-    
-              </div>
-    
-
-
-<!-- <div class="container-fluid" id="">
-    <div class="container" id="">
-            Post Stuff
-    </div>
-        
-    <div class="container" id="">
-        Borrow Stuff
-    </div>
+<!-- <div class="ui category search">
+        <div class="ui icon input">
+            <input class="prompt" type="text" placeholder="Search animals...">
+            <i class="search icon"></i>
+        </div>
+    <div class="results"></div>
 </div> -->
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"></script> <!-- Semantic cdn for js-->
+
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js">
+
+</script> 
+<!-- Semantic for cdnjs -->
 </body>
+
+
 </html>
