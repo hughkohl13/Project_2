@@ -13,7 +13,6 @@ p {
 
 
 .ui.inverted.segment, .ui.primary.inverted.segment {
-    background-image: url("../images/Stuffer_Logo.png");
     color: rgba(255, 255, 255, 0.9);
 }
 
@@ -36,6 +35,9 @@ p {
     color: rgba(0, 0, 0, 0.87);
 }
 
+/* 
+Masthead block 
+*/
 .masthead .ui.menu .ui.button {
     margin-left: 0.5em;
 }
@@ -46,6 +48,38 @@ p {
     font-size: 10em;
     font-weight: normal;
 }
+
+.masthead h2 {
+    font-size: 1.7em;
+    font-weight: normal;
+}
+
+.masthead.segment {
+    min-height: 700px;
+    padding: 1em 0em;
+}
+
+
+/* 
+search box styling 
+*/
+#mastheadSearch{
+    height: 14em;
+}
+
+#searchContainer {
+
+}
+
+#topSegment-Search {
+    margin-top: 5em;
+}
+
+
+
+/* 
+.ui customizations 
+*/
 
 .ui.large.menu {
     font-size: 1.3142857rem;
@@ -95,19 +129,12 @@ p {
     text-align: center;
 }
 
-.masthead h2 {
-    font-size: 1.7em;
-    font-weight: normal;
-}
 
-.masthead.segment {
-    min-height: 700px;
-    padding: 1em 0em;
-}
 
 
 .ui.vertical.stripe h3 {
     font-size: 30px;
+    margin-top: 1em;
 }
 
 .ui.vertical.stripe h4 {
@@ -135,11 +162,10 @@ p {
 }
 
 
-
+/* grid css */
 .ui.grid > .row > [class*="six wide"].column, .ui.grid > .column.row > [class*="six wide"].column, .ui.grid > [class*="six wide"].column, .ui.column.grid > [class*="six wide"].column {
     width: 37.5% !important;
 }
-
 
 .ui.grid>.row {
     position: relative;
