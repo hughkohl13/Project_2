@@ -99,7 +99,19 @@ var orm = {
         //   console.log(result);
           cb(result);
         });    
-    }      
+    },     
+
+    selectAllUsers: function(cb) {
+      var query = connection.query(
+        "SELECT ID, FIRST_NAME, LAST_NAME, EMAIL, ADDRESS, POSTAL FROM USERS"
+        , function(err, result) {
+          if (err) throw err;
+        //   console.log(result);
+          cb(result);
+        });    
+    },     
+    
+    
     // selectAllDevoured: function (cb)
     // {
     //     var query = connection.query(
