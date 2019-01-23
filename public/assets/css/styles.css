@@ -129,3 +129,18 @@ p {
 .ui.grid > .row > [class*="six wide"].column, .ui.grid > .column.row > [class*="six wide"].column, .ui.grid > [class*="six wide"].column, .ui.column.grid > [class*="six wide"].column {
     width: 37.5% !important;
 }
+
+/* Sign up */
+
+body {
+    background-color: #ff8e00;
+  }
+  body > .grid {
+    height: 100%;
+  }
+  .image {
+    margin-top: -100px;
+  }
+  .column {
+    max-width: 450px;
+  }
