@@ -1,120 +1,140 @@
+var connection = require("./connection.js");
 
-var connection = require("../config/connection.js");
+// all: function(tableInput, cb) {
+//     var queryString = "SELECT * FROM " + tableInput + ";";
+//     connection.query(queryString, function(err, result) {
+//       if (err) {
+//         throw err;
+//       }
+//       cb(result);
+//     });
+//   },
 
-function printQuestionMarks(num) {
-  var arr = [];
-  for (var i = 0; i < num; i++) {
-    arr.push("?");
-  }
-  return arr.toString();
-}
-
-// Helper function to convert object key/value pairs to SQL syntax
-function objToSql(ob) {
-  var arr = [];
-
-  for (var key in ob) {
-    var value = ob[key];
-    if (Object.hasOwnProperty.call(ob, key)) {
-      if (typeof value === "string" && value.indexOf(" ") >= 0) {
-        value = "'" + value + "'";
-      }
-      
-      arr.push(key + "=" + value);
-    }
-  }
-
-  return arr.toString();
-}
-
-// Object for all our SQL statement functions.
 var orm = {
-  all: function(tableInput, cb) {
-    var queryString = "SELECT * FROM " + tableInput + ";";
-    connection.query(queryString, function(err, result) {
-      if (err) {
-        throw err;
-      }
+    selectAllImages: function (cb)
+    {
+        var query = connection.query(
+        "SELECT ID, ORIGINALNAME, PATH FROM IMAGES WHERE MIMETYPE in('image/jpeg','image/png')"
+        , function(err, result) {
+          if (err) throw err;
+       //   console.log(result);
+          cb(result);
+        });    
+    },
+    selectImageId: function (imageId, cb)
+    {
+        var query = connection.query(
+        "SELECT ID, ORIGINALNAME, PATH FROM IMAGES WHERE MIMETYPE in('image/jpeg','image/png') AND ID= ?"
+        ,[imageId]
+        , function(err, result) {
+          if (err) throw err;
+       //   console.log(result);
+          cb(result);
+        });    
+    },
+    selectAllItems: function (cb)
+    {
+        var query = connection.query(
+        "SELECT ID, CATEGORY_ID, OWNER_ID, BORROWER_ID,  IMAGE_ID,  ITEM_NAME FROM ITEMS"
+        , function(err, result) {
+          if (err) throw err;
+        //   console.log(result);
+          cb(result);
+        });    
+    },          
+    selectItemId: function (itemId, cb)
+    {
+        var query = connection.query(
+        "SELECT ID, CATEGORY_ID, OWNER_ID, BORROWER_ID,  IMAGE_ID,  ITEM_NAME, DESCRIPTION, PENDING FROM ITEMS WHERE ID = ?"
+        ,[itemId]
+        , function(err, result) {
+          if (err) throw err;
+        //   console.log(result);
+          cb(result);
+        });    
+    },
+    selectItemPending: function (cb)
+    {
+        var query = connection.query(
+        "SELECT ID, CATEGORY_ID, OWNER_ID, BORROWER_ID,  IMAGE_ID,  ITEM_NAME, DESCRIPTION FROM ITEMS WHERE PENDING = 1"
+        , function(err, result) {
+          if (err) throw err;
+        //   console.log(result);
+          cb(result);
+        });    
+    },   
+    selectItemsOwned: function(cb){
+      var queryString = "SELECT I.ITEM_NAME, I.DESCRIPTION, C.NAME CATEGORY_NAME, IM.PATH IMAGE_PATH, IM.NAME IMAGE_NAME FROM ITEMS I INNER JOIN CATEGORIES C ON (C.ID = I.CATEGORY_ID) LEFT JOIN IMAGES IM ON (IM.ID = I.IMAGE_ID) WHERE OWNER_ID = 1 ORDER BY I.CREATEDAT DESC";
+      
+      console.log(queryString);
+      connection.query(queryString, function(err, result) {
+        if (err) {
+          throw err;
+        }
+    
+        cb(result);
+      });
+      },
+    selectItemsBorrowed: function(cb){
+      var queryString = "SELECT I.ITEM_NAME, C.NAME CATEGORY_NAME, IM.NAME IMAGE_NAME FROM ITEMS I INNER JOIN CATEGORIES C ON (C.ID = I.CATEGORY_ID) LEFT JOIN IMAGES IM ON (IM.ID = I.IMAGE_ID)";
+      
+      console.log(queryString);
+      connection.query(queryString, function(err, result) {
+        if (err) {
+          throw err;
+        }
+
       cb(result);
-    });
-  },
-  owned: function(cb){
-  var queryString = "SELECT I.ITEM_NAME, C.NAME CATEGORY_NAME, IM.NAME IMAGE_NAME FROM ITEMS I INNER JOIN CATEGORIES C ON (C.ID = I.CATEGORY_ID) LEFT JOIN IMAGES IM ON (IM.ID = I.IMAGE_ID)";
+      });
+    },
+    selectItemsAvailable: function(cb) {
+      var queryString = "SELECT I.ITEM_NAME, C.NAME CATEGORY_NAME, IM.NAME IMAGE_NAME FROM ITEMS I INNER JOIN CATEGORIES C ON (C.ID = I.CATEGORY_ID) LEFT JOIN IMAGES IM ON (IM.ID = I.IMAGE_ID) WHERE I.OWNER_ID <> ? AND WHERE AVAILABLE_DATE IS NULL AND I.LOCATION = ? AND (? IS NULL OR CATEGORY_ID = ?) "
+    },
+    selectAllCategories: function (cb)
+    {
+        var query = connection.query(
+        "SELECT ID, NAME FROM CATEGORIES"
+        , function(err, result) {
+          if (err) throw err;
+        //   console.log(result);
+          cb(result);
+        });    
+    }      
+    // selectAllDevoured: function (cb)
+    // {
+    //     var query = connection.query(
+    //     "SELECT * FROM BURGERS WHERE DEVOURED = 1"
+    //     , function(err, result) {
+    //       if (err) throw err;
+    //    //   console.log(result);
+    //       cb(result);
+    //     });    
+    // },
+    // insertOne: function(burgerName)
+    // {
+    //     var query = connection.query(
+    //         "INSERT INTO BURGERS SET ?",
+    //         {
+    //           burger_name: burgerName
+    //         },
+    //         function(err, res) {
+    //           console.log(res.affectedRows + " burger inserted!\n");
+    //         }
+    //       );
+    // },
+
+    // updateOne: function(burgerId)
+    // {
+    //     var query = connection.query(
+    //         "UPDADE BURGERS SET DEVOURED = true WHERE ID = ?",
+    //         {
+    //           id: burgerId
+    //         },
+    //         function(err, res) {
+    //           console.log(res.affectedRows + " burger updated!\n");
+    //         }
+    //       );
+    // }
+  };
   
-  console.log(queryString);
-  connection.query(queryString, function(err, result) {
-    if (err) {
-      throw err;
-    }
-    
-    cb(result);
-  });
-  },
-  borrowed: function(cb){
-    // var queryString = "SELECT I.ITEM_NAME, C.NAME CATEGORY_NAME, IM.NAME IMAGE_NAME FROM ITEMS I INNER JOIN CATEGORIES C ON (C.ID = I.CATEGORY_ID) LEFT JOIN IMAGES IM ON (IM.ID = I.IMAGE_ID)";
-    
-    // console.log(queryString);
-    // connection.query(queryString, function(err, result) {
-    //   if (err) {
-    //     throw err;
-    //   }
-    orm.owned(cb);
-    // cb(result);
-    // });
-  },
-  available: function(cb) {
-    var queryString = "SELECT I.ITEM_NAME, C.NAME CATEGORY_NAME, IM.NAME IMAGE_NAME FROM ITEMS I INNER JOIN CATEGORIES C ON (C.ID = I.CATEGORY_ID) LEFT JOIN IMAGES IM ON (IM.ID = I.IMAGE_ID) WHERE I.OWNER_ID <> ? AND WHERE AVAILABLE_DATE IS NULL AND I.LOCATION = ? AND (? IS NULL OR CATEGORY_ID = ?) "
-  },
-  create: function(table, cols, vals, cb) {
-    var queryString = "INSERT INTO " + table;
-
-    queryString += " (";
-    queryString += cols.toString();
-    queryString += ") ";
-    queryString += "VALUES (";
-    queryString += printQuestionMarks(vals.length);
-    queryString += ") ";
-
-    console.log(queryString);
-
-    connection.query(queryString, vals, function(err, result) {
-      if (err) {
-        throw err;
-      }
-
-      cb(result);
-    });
-  },
-  update: function(table, objColVals, condition, cb) {
-    var queryString = "UPDATE " + table;
-
-    queryString += " SET ";
-    queryString += objToSql(objColVals);
-    queryString += " WHERE ";
-    queryString += condition;
-
-    console.log(queryString);
-    connection.query(queryString, function(err, result) {
-      if (err) {
-        throw err;
-      }
-
-      cb(result);
-    });
-  },
-  delete: function(table, condition, cb) {
-    var queryString = "DELETE FROM " + table;
-    queryString += " WHERE ";
-    queryString += condition;
-
-    connection.query(queryString, function(err, result) {
-      if (err) {
-        throw err;
-      }
-
-      cb(result);
-    });
-  }
-};
-
 module.exports = orm;
