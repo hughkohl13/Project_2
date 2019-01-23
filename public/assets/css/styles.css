@@ -1,6 +1,14 @@
-.landing-image {
-    background-image: url('../images/Stuffer_Logo.png') !important;
-    background-size: cover 
+p {
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+
+p {
+    margin: 0em 0em 1em;
+    line-height: 1.4285em;
 }
 
 
@@ -10,7 +18,7 @@
 }
 
 .ui.inverted.segment {
-    background: #e29029;
+    background: url("../images/background_tools.jpeg");
     border: none;
     -webkit-box-shadow: none;
     box-shadow: none;
@@ -51,6 +59,13 @@
     font-size: 1em;
 }
 
+.ui.primary.button {
+    background-color: #ff8e00;
+    color: #FFFFFF;
+    text-shadow: none;
+    background-image: none;
+}
+
 .ui.secondary.inverted.pointing.menu {
     border-width: 0px;
     border-color: rgba(34, 36, 38, 0.15);
@@ -69,6 +84,7 @@
 
 .ui.segment, .ui.segments .segment {
     font-size: 1.4rem;
+    text-align: center;
 }
 
 .masthead h1.ui.header {
@@ -90,26 +106,15 @@
 
 
 .ui.vertical.stripe h3 {
-    font-size: 2em;
+    font-size: 20px;
 }
 
 
 .ui.vertical.stripe p {
-    font-size: 1.33em;
+    font-size: 18px;
 }
 
-p {
-    display: block;
-    margin-block-start: 1em;
-    margin-block-end: 1em;
-    margin-inline-start: 0px;
-    margin-inline-end: 0px;
-}
 
-p {
-    margin: 0em 0em 1em;
-    line-height: 1.4285em;
-}
 
 .ui.header:first-child {
     margin-top: -0.14285714em;
@@ -126,15 +131,44 @@ p {
     align-self: center !important;
 }
 
+
+
 .ui.grid > .row > [class*="six wide"].column, .ui.grid > .column.row > [class*="six wide"].column, .ui.grid > [class*="six wide"].column, .ui.column.grid > [class*="six wide"].column {
     width: 37.5% !important;
+}
+
+
+.ui.grid>.row {
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-box-pack: inherit;
+    -ms-flex-pack: inherit;
+    justify-content: inherit;
+    -webkit-box-align: stretch;
+    -ms-flex-align: stretch;
+    align-items: stretch;
+    width: 100%!important;
+    padding: 0;
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+}
+
+.ui.centered.grid>.column:not(.aligned):not(.justified):not(.row), .ui.centered.grid>.row>.column:not(.aligned):not(.justified), .ui.grid .centered.row>.column:not(.aligned):not(.justified) {
+    text-align: center;
 }
 
 /* Sign up */
 
 body {
     background-color: #ff8e00;
-    background-image: url(../images/working-tools-background-vector-3838001.jpg)
   }
   body > .grid {
     height: 100%;
@@ -145,4 +179,3 @@ body {
   .column {
     max-width: 450px;
   }
-
