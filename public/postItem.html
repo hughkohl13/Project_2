@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" type="text/css">
+		<link rel="stylesheet" href="/assets/css/styles.css" type="text/css" />
+		<title>Stuffer</title>
+		<script src="https://code.jquery.com/jquery.js"></script>
+    <script src="/js/stuffer"></script>
+    <script src="/js/postitem"></script>
+</head>
+
+<body>
+<nav class="navbar navbar-expand-md navbar-light bg-light">
+    <!-- navbar items on the left -->
+    <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <img src="/image/stuffer" width="30" height="30" class="d-inline-block align-top" href="index.html" alt="">
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<!-- Post stuff and get stuff boxes inside a background container -->
+<div class="container-fluid" id="post">
+        <!-- <form class="form-inline" action="/post" method='post' id='post-form'> -->
+        <form id="addItem" action="/images" method="post" enctype="multipart/form-data">          
+            <!-- <input class="form-control mr-sm-2" id="Image" type="image" placeholder="Image" aria-label="Search"> -->
+            <h2>Post an item to Stuffer</h2>
+            <h5>Category</h5>
+            <select class="chosen-select" id="select-category">
+            </select>
+            <br>
+            <br>
+            <input class="form-control mr-sm-2" id="item-name" type="text" placeholder="Name" aria-label="Search">
+            <!-- <input class="form-control mr-sm-2" id="Category" type="text" placeholder="Category" aria-label="Search"> -->
+            <br>
+            <input class="form-control mr-sm-2" id="description" type="text" placeholder="Description" aria-label="Search">
+            <br>
+            <h5>Upload an image</h5>
+            <input type="file" id="input-file" name="avatar" /> 
+            <br>
+            <center>
+              <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Post</button>
+            </center>
+            </form>
+</div>
+<!-- <iframe src="/item/page"></iframe> -->
+</body>
+</html>
