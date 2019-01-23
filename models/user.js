@@ -38,4 +38,4 @@ var users = {
 };
 
 // Export the database functions to the controller (user.js).
-module.export = user
+module.export = users

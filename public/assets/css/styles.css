@@ -140,6 +140,7 @@ p {
     width: 37.5% !important;
 }
 
+
 .ui.grid>.row {
     position: relative;
     display: -webkit-box;
@@ -189,3 +190,18 @@ p {
 .column.characters:hover {
     transform: scale(1.1);
 }
+
+/* Sign up */
+
+/* body {
+    background-color: #ff8e00;
+  }
+  body > .grid {
+    height: 100%;
+  }
+  .image {
+    margin-top: -100px;
+  }
+  .column {
+    max-width: 450px;
+  } */
