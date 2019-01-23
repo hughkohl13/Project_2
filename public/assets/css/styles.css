@@ -134,6 +134,7 @@ p {
 
 body {
     background-color: #ff8e00;
+    background-image: url(../images/working-tools-background-vector-3838001.jpg)
   }
   body > .grid {
     height: 100%;
@@ -144,3 +145,4 @@ body {
   .column {
     max-width: 450px;
   }
+
