@@ -33,72 +33,66 @@
 
 <!-- page contents -->
 <div class="pusher">
-    <div class="ui inverted vertical masthead center aligned segment" style>
+    <div class="ui inverted vertical center aligned segment" id="mastheadSearch">
         <div class="ui container">
             <div class="ui large secondary inverted pointing menu">
                 <!-- <a class="toc item">
                     <i class="sidebar icon"></i>
                 </a> -->
-                <a class="active item"><img src="../public/assets/images/Stuffer_Logo_Main.png" height="45px" width="50px"></a>
-                <!-- <a class="item">Posted Stuff</a>
-                <a class="item">Borrowed Stuff</a>
-                <a class="item">Contact</a> -->
+                <a class="item"><img src="../public/assets/images/Stuffer_Logo_Main.png" height="45px" width="50px"></a>
                 <div class="right item">
                     <a class="ui inverted button" style> Log in</a>
                     <a class="ui inverted button">Sign Up</a>
                 </div>
             </div>
         </div>
-        <div class="ui text Container" style>
-            <h1 class="ui inverted header" style>
-                Stuffer
-            </h1>
-            <!-- <h2 style> Just Stuff it!</h2> -->
-            <div class="ui huge primary button">
-                <i class="left arrow icon">
-                </i>
-                Post Stuff
+        <div class="ui container stackable grid">
+            <div class="two wide column"></div>
+            <div class="four wide column">
+                    <div class="ui category search">
+                        <div class="ui icon input">
+                            <input class="prompt" type="text" placeholder="Search Stuff...">
+                            <i class="search icon"></i>
+                            </div>
+                            <div class="results"></div>
+                    </div>
             </div>
-            <div class="ui huge primary button">
-                Borrow Stuff
-                <i class="right arrow icon">
-                </i>
+            <div class="four wide column">
+                    <div class="ui category search">
+                            <div class="ui icon input">
+                            <input class="prompt" type="text" placeholder="Search Category...">
+                            <i class="search icon"></i>
+                            </div>
+                            <div class="results"></div>
+                        </div>
             </div>
-        </div>
-    </div>
+            <div class="two wide column">
+                    <div class="ui huge primary button right aligned" id="searchButton">
+                            Search
+                </div>
+            </div>
+        </div> 
+    </div>  
+</div>      
     <div class="ui vertical stripe segment middle aligned">
-            <h3 class="column"> How it works </h3>
-            <div class="ui three column centered grid ">
-                <div class="column">
-                    <!-- <div class="ui" text-align="center"> -->
-                        <img src="../public/assets/images/Stuffer_characters/Lending.png" height="100px" width="70px">
-                        <h4 class="ui header"> Lend Stuff </h4>
-                        <p> Lending to a neighbour is an excellent way to use that drill or share that book you love.
-                        </p>
-                    <!-- </div> -->
-                </div>    
-                <div class="column">
-                        <img src="../public/assets/images/Stuffer_characters/Borrowing.png" height="100px" width="70px">
-                        <h4 class="ui header"> Borrow Stuff </h4>
-                        <p>
-                            Browse thousands of items shared by your local community for free!
-                        </p>
-                </div>
-                <div class="column">
-                        <img src="../public/assets/images/Stuffer_characters/Sharing.png" height="100px" width="120px">
-                        <h4 class="ui header">  Give Stuff back to your community </h4>
-                        <p>
-                            Kickstart the sharing economy
-                        </p>
-                </div>
-                </div>
         </div> 
         <div class="row">
             
         </div>
-        </div>
     </div>
 
+<script type="text/javascript">
+$('#searchButton').on("click", function(){
+    $.ajax({
+    url: "/search",
+    method: "GET"
+}).then(function(res){
+    console.log(res);
+})
+})
+
+
+</script>    
                <!-- CARDS-->
 
            <!-- Owned -->
@@ -158,7 +152,7 @@
 
 
 
- /
+ 
 
 <!-- Search for objects -->
 
