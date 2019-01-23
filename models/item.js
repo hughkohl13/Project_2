@@ -8,9 +8,23 @@ var items = {
       cb(res);
     });
   },
+  available: function(cb) {
+    orm.available("items", objColVals, condition, function(res) {
+      cb(res);
+    });
+  },
+  borrowed: function(cb) {
+    orm.borrowed("items", function(res) {
+      cb(res);
+    })
+  },
   create: function(cols, vals, cb) {
     orm.create("items", cols, vals, function(res) {
       cb(res);
+    });
+  },
+  delete: function(cols, vals, cb) {
+    orm.delete("items", cols, vals, function(res) {
     });
   },
   update: function(objColVals, condition, cb) {
@@ -22,12 +36,7 @@ var items = {
     orm.owned("items", function(res){
       cb(res);
     })
-  },
-  borrowed: function(cb) {
-    orm.borrowed("items", function(res) {
-      cb(res);
-    })
-  },
+  }
 };
 
 // Export the database functions to the controller (items.js).
