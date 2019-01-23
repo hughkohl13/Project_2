@@ -19,6 +19,7 @@ p {
 
 .ui.inverted.segment {
     background: url("../images/background_tools.jpeg");
+    opacity: 0.9;
     border: none;
     -webkit-box-shadow: none;
     box-shadow: none;
@@ -37,6 +38,13 @@ p {
 
 .masthead .ui.menu .ui.button {
     margin-left: 0.5em;
+}
+
+.masthead h1.ui.header {
+    margin-top: 1em;
+    margin-bottom: 0em;
+    font-size: 10em;
+    font-weight: normal;
 }
 
 .ui.large.menu {
@@ -87,13 +95,6 @@ p {
     text-align: center;
 }
 
-.masthead h1.ui.header {
-    margin-top: 3em;
-    margin-bottom: 0em;
-    font-size: 4em;
-    font-weight: normal;
-}
-
 .masthead h2 {
     font-size: 1.7em;
     font-weight: normal;
@@ -106,15 +107,17 @@ p {
 
 
 .ui.vertical.stripe h3 {
-    font-size: 20px;
+    font-size: 30px;
+}
+
+.ui.vertical.stripe h4 {
+    font-size: 18px;
 }
 
 
 .ui.vertical.stripe p {
     font-size: 18px;
 }
-
-
 
 .ui.header:first-child {
     margin-top: -0.14285714em;
@@ -161,13 +164,36 @@ p {
     padding-bottom: 5rem;
 }
 
+.ui.grid>.column:not(.row) {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    margin: 1rem;
+}
+
 .ui.centered.grid>.column:not(.aligned):not(.justified):not(.row), .ui.centered.grid>.row>.column:not(.aligned):not(.justified), .ui.grid .centered.row>.column:not(.aligned):not(.justified) {
     text-align: center;
 }
 
+.ui.one.column.centered.grid {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    padding-left: 3.5rem;
+    padding-right: 3.5rem;
+}
+
+.column.characters {
+    transition: all .25s ease-in-out;
+}
+
+.column.characters:hover {
+    transform: scale(1.1);
+}
+
 /* Sign up */
 
-body {
+/* body {
     background-color: #ff8e00;
   }
   body > .grid {
@@ -178,4 +204,4 @@ body {
   }
   .column {
     max-width: 450px;
-  }
+  } */
