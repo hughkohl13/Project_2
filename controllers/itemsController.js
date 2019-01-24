@@ -311,44 +311,5 @@ router.post('/upload', upload.array('photos', 12), function (req, res, next) {
 
 //     });  
 //   });
-router.get("/lib", function(req,res) {
-  // res.sendFile(path.join(__dirname, "./../views/layouts/css/reset.css"));
-  res.sendFile(path.join(__dirname, "./../public/assets/js/lib.js"));
-});
-router.get("/css/reset", function(req,res) {
-  // res.sendFile(path.join(__dirname, "./../views/layouts/css/reset.css"));
-  res.sendFile(path.join(__dirname, "./../public/assets/css/reset.css"));
-});
-router.get("/css/style", function(req,res) {
-  // res.sendFile(path.join(__dirname, "./../views/layouts/css/style.css"));
-  res.sendFile(path.join(__dirname, "./../public/assets/css/style.css"));
-});
-router.get("/image/concrete", function(req,res) {
-  res.sendFile(path.join(__dirname, "./../public/assets/images/concrete_seamless.png"));
-});
-router.get("/image/stuffer", function(req,res) {
-  res.sendFile(path.join(__dirname, "./../public/assets/images/Stuffer_Logo.png"));
-});
-router.get("/js/stuffer", function(req,res) {
-  res.sendFile(path.join(__dirname, "./../public/assets/js/Stuffer.js"));
-});
-router.get("/js/postitem", function(req,res) {
-  res.sendFile(path.join(__dirname, "./../public/assets/js/postitem.js"));
-});
-router.get("/js/index", function(req,res) {
-  res.sendFile(path.join(__dirname, "./../public/assets/js/index.js"));
-});
-// router.get("/image/burger", function(req,res) {
-//   res.sendFile(path.join(__dirname, "./../views/layouts/images/burger.jpg"));
-// });
-router.get("/uploads/:image", function(req,res) {
-  console.log(req.params);
-  res.sendFile(path.join(__dirname, "./../uploads/"+req.params.image));
-});
-// app.get('/burgers', function(req, res) {
-// // res.send('Hello from api GET friends route.');
-// res.send(friends.friends);
-// });
 
-// module.exports = app;
 module.exports = router;

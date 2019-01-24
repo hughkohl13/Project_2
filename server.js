@@ -21,8 +21,9 @@ app.set("view engine", "handlebars");
 var route1 = require("./controllers/itemsController.js");
 var route2 = require("./controllers/usersController.js");
 var route3 = require("./controllers/searchController.js");
+var route4 = require("./controllers/filesController.js");
             
-app.use(route1, route2, route3);
+app.use(route1, route2, route3, route4);
 
 app.listen(PORT, function() {
   console.log("App now listening at localhost:" + PORT);
