@@ -108,16 +108,26 @@ $(document).ready(function() {
 document.onsubmit = function(event) {
 // alert("Submitting");
 // event.preventDefault();
+
+if (document.getElementById('input-file').files[0])
+{
+  var isPending = 1;
+}
+else {
+  var isPending = 0;
+}
+
 var itemData = {item_name: $("#item-name").val(),
                 description: $("#description").val(),
-                categoryId: $("#select-category").val()
+                categoryId: $("#select-category").val(),
+                pending: isPending
               };
 
       // AJAX post the data to the friends API.
 $.post("/items", itemData, function(data) {
 
-  $("#results-modal").modal("toggle");
-
+  // $("#results-modal").modal("toggle");
+  console.log("Inserted item "+data);
   // alert("Done image id="+imageId);
   // Grab the result from the AJAX post so that the best match's name and photo are displayed.
   // $("#match-name").text(data.name);
@@ -134,6 +144,7 @@ if (document.getElementById('input-file').files[0])
 }
 else {
   event.preventDefault();
+  location.reload();
 }
 
 // alert("imageId="+imageId);
