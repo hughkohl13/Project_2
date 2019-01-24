@@ -111,21 +111,23 @@ document.onsubmit = function(event) {
 
 if (document.getElementById('input-file').files[0])
 {
-  var isPending = 1;
+  var isPending = "1";
 }
 else {
-  var isPending = 0;
+  var isPending = "0";
 }
 
 var itemData = {item_name: $("#item-name").val(),
                 description: $("#description").val(),
                 categoryId: $("#select-category").val(),
-                pending: isPending
+                pending: parseInt(isPending)
               };
 
-      // AJAX post the data to the friends API.
-$.post("/items", itemData, function(data) {
-
+      // AJAX post the data 
+$.post("/items", itemData, function(err,data) {
+ if (err) {
+   throw err;
+ }
   // $("#results-modal").modal("toggle");
   console.log("Inserted item "+data);
   // alert("Done image id="+imageId);
