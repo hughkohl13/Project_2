@@ -172,9 +172,16 @@ router.get('/items/image/:imageId', function(req, res) {
   });  
 
 router.post('/items', function(req, res) {
- res.send('Hello from api POST items route.');
+//  res.send('Hello from api POST items route.');
   console.log(req.body);
-  connection.query("INSERT INTO ITEMS (ITEM_NAME, DESCRIPTION, CATEGORY_ID, OWNER_ID, PENDING) VALUES (?,?,?,?,?)", [req.body.item_name,req.body.description,req.body.categoryId,1,1], function(err, result) {
+
+  if (req.body.pending === '1'){
+    var queryString = "INSERT INTO ITEMS (ITEM_NAME, DESCRIPTION, CATEGORY_ID, OWNER_ID, PENDING) VALUES (?,?,?,?,TRUE)";
+  }
+  else {
+    var queryString = "INSERT INTO ITEMS (ITEM_NAME, DESCRIPTION, CATEGORY_ID, OWNER_ID, PENDING) VALUES (?,?,?,?,FALSE)";
+  }
+  connection.query(queryString, [req.body.item_name,req.body.description,req.body.categoryId,1], function(err, result) {
     if (err) {
       throw err;
       return res.status(500).end();

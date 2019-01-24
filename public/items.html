@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="https://code.jquery.com/jquery.js"></script>
+  <script src="/lib"></script>
+  <link rel="stylesheet" type="text/css" href="/css/style"> 
+  <title>Stuffer Items</title>
+</head>
+<body>
+  <h1>Items Owned</h1>
+  
+  <!-- <form id="addFile" action="/profile" method="post" enctype="multipart/form-data">
+    <input type="file" name="avatar" />
+    <input type="submit" id="submit" name="submit" />
+  </form> -->
+  
+  <div id="images-data" class="image">
+      <!-- {{!-- <a href="https://gillesleroy.github.io/word-guess-game/"> --}} -->
+       <!-- {{!-- </a> --}} -->
+      <!-- <h3>Test Image</h3>
+      <img class="bio-images" src="uploads/cbc602872fb63792d2b8af1d3c8ffc05" alt="image"> -->
+  </div>
+  
+  <div id="items-data" class="item">
+  </div>
+  <!-- <script type ="text/javascript">
+
+    $("#submit").on("click", function(event) {
+      event.preventDefault();
+      // alert("Click!");
+      var newFile = {
+      // plan: $("#createplan [name=plan]").val().trim()
+      file: $("#addFile [name=avatar]")
+      };
+      $.ajax("/profile", {
+            type: "POST",
+            data: newFile
+          }).then(
+            function() {
+              console.log("Uploaded new file");
+              // Reload the page to get the updated list
+              // location.reload();
+            }
+          );
+    });
+  </script> -->
+</body>
+
+<script>
+    function getImages() {
+      var resImageName;
+      var queryURL = '/images';
+      console.log(queryURL);
+      $.ajax({
+        url: queryURL,
+        method: 'GET'
+      }).then(function(response) {
+        // Printing the entire object to console
+        console.log(response);
+        // $("#query-div").empty();
+        // $("#query-table").empty();
+        $('#images-data').empty();
+        for (var i = 0; i < response.length; i++) {
+          // Constructing HTML containing the artist information
+          // var resDepName = $("<h2>").text(response[i].department_name);
+          // newRow = $("<tr>");
+          // resFriendName = $("<td>").text(response[i].name);
+
+          // newRow = $('<h4>').text(response[i].ORIGINALNAME);
+    //   <div class="work"> 
+    //   <a href="https://github.com/gillesleroy/liri-node-app.git">
+    //     <img src="assets/images/ScreenShot_1.png" alt="Liri Node App">
+    //   </a>  
+    //   <h3>Liri</h3>
+    //  </div>          
+          var newDiv = $("<div>");
+          newDiv.addClass("work");
+          var newA = $("<a>");
+          newA.attr("href","/items/page");
+          var newH = $("<h3>");
+          newH.text(response[i].ORIGINALNAME);
+          var newImage = $("<img>");
+          newImage.addClass("auth-image");
+          newImage.attr("alt", response[i].ORIGINALNAME);
+          newImage.attr("src", response[i].PATH);
+          newA.append(newImage);
+          newDiv.append(newA);
+          newDiv.append(newH);
+
+      // <img class="bio-images" src="uploads/cbc602872fb63792d2b8af1d3c8ffc05" alt="image">
+
+          // newRow.append(resFriendName);
+          // $('#images-data').append(newRow);
+          // $('#images-data').append(newImage);
+          $('#images-data').append(newDiv);
+        }
+      });
+    }
+
+    function getItems() {
+      var queryURL = '/items/owned';
+      console.log(queryURL);
+      $.ajax({
+        url: queryURL,
+        method: 'GET'
+      }).then(function(response) {
+        // Printing the entire object to console
+        console.log(response);
+        // $("#query-div").empty();
+        // $("#query-table").empty();
+        // $('#items-data').empty();
+        $('#images-data').empty();
+        for (var i = 0; i < response.length; i++) {
+          // var newH = $("<h3>");
+          // newH.text(response[i].ITEM_NAME);
+          // $('#items-data').append(newH);
+          var newDiv = $("<div>");
+          newDiv.addClass("work");
+          var newA = $("<a>");
+          newA.attr("href","/items/page");         
+          var newH = $("<h3>");
+          newH.text(response[i].ITEM_NAME);
+          var newImage = $("<img>");
+          if (response[i].IMAGE_PATH){
+            newImage.attr("src", "./../"+response[i].IMAGE_PATH);
+            newImage.addClass("auth-image");
+            newImage.attr("alt", response[i].ITEM_NAME);
+            newA.append(newImage);
+          }
+          else {
+            newImage.attr("src", "/image/stuffer");
+            newImage.addClass("auth-image");
+            newImage.attr("alt", response[i].ITEM_NAME);
+            newA.append(newImage);         
+          }
+          newDiv.append(newA);
+          newDiv.append(newH);
+          $('#images-data').append(newDiv);
+
+        }
+      });
+    }
+
+    // getImages();
+    getItems();
+  </script>
+
+</html>

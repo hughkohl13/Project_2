@@ -16,14 +16,17 @@ router.get("/js/postitem", function(req,res) {
 router.get("/js/index", function(req,res) {
   res.sendFile(path.join(__dirname, "./../public/assets/js/index.js"));
 });
+
 // css
 router.get("/css/reset", function(req,res) {
   res.sendFile(path.join(__dirname, "./../public/assets/css/reset.css"));
 });
+router.get("/css/style", function(req,res) {
+  res.sendFile(path.join(__dirname, "./../public/assets/css/style.css"));
+});
 router.get("/css/styles", function(req,res) {
   res.sendFile(path.join(__dirname, "./../public/assets/css/styles.css"));
 });
-
 // Images
 router.get("/image/stuffer", function(req,res) {
   res.sendFile(path.join(__dirname, "./../public/assets/images/Stuffer_Logo_Main.png"));
@@ -40,5 +43,8 @@ router.get("/image/sharing", function(req,res) {
 router.get("/image/concrete", function(req,res) {
   res.sendFile(path.join(__dirname, "./../public/assets/images/concrete_seamless.png"));
 });
-
+router.get("/uploads/:image", function(req,res) {
+  console.log(req.params);
+  res.sendFile(path.join(__dirname, "./../uploads/"+req.params.image));
+});
 module.exports = router;
