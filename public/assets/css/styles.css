@@ -1,3 +1,5 @@
+
+
 p {
     display: block;
     margin-block-start: 1em;
@@ -215,6 +217,23 @@ search box styling
 
 .column.characters:hover {
     transform: scale(1.1);
+}
+
+
+/* 
+Sign up and Login forms 
+*/
+
+.ui.form {
+    position: relative;
+    max-width: 450px;
+    margin-left: 33.3%;
+}
+
+.ui.message {
+    font-size: 1em;
+    max-width: 450px;
+    margin-left: 33.3%;
 }
 
 /* Sign up */
