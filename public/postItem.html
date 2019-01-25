@@ -12,14 +12,13 @@
     <script src="/js/postitem"></script>
 </head>
 
-<body>
-<div class="pusher">
-        <div class="ui inverted vertical center aligned segment" style>
+<body id="postBody">
+<div class="pusher" id="pusher">
+        <div class="ui inverted vertical center aligned segment" id="Nav" style>
             <div class="ui container">
                 <div class="ui large secondary inverted pointing menu">
-                    <!-- <a class="item"><img src="../public/assets/images/Stuffer_Logo_Main.png" height="45px" width="50px"></a> -->
-                    <a class="item"><img src="/image/stuffer" height="45px" width="50px"></a>
-                    <a class="item">Posted Stuff</a>
+                    <a class="item"> Home </a>
+                    <a class="item">My Stuff</a>
                     <a class="item">Borrowed Stuff</a>
                     <!-- <a class="item">Contact</a>  -->
                     <div class="right item">
@@ -39,7 +38,7 @@
         <form class="ui large form" id="addItem" action="/images" method="post" enctype="multipart/form-data">         
             <!-- <input class="form-control mr-sm-2" id="Image" type="image" placeholder="Image" aria-label="Search"> -->
             <div class="content">
-                    <h2 class="ui grey image header"> Post an item   </h2>  
+                    <h2 class="ui grey image header"> Share an item </h2>  
             </div>
             <h5>Category</h5>
             <select class="chosen-select" id="select-category">

@@ -7,29 +7,34 @@
         <title>Stuffer</title>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css"> <!-- Semantic cdn for all-->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/components/button.css">
-        <link rel="stylesheet" href="../public/assets/css/styles.css" type="text/css">
+        <link rel="stylesheet" href="assets/css/styles.css" type="text/css">
 		<script src="https://code.jquery.com/jquery.js"></script>
 		<script src="../public/assets/js/index.js"></script>
 </head>
 
 <body body data-gr-c-s-loaded="true" class="pushable">
 <!-- page contents -->
-<div class="pusher">
+<div class="pusher" id="pusherSearch">
     <div class="ui inverted vertical center aligned segment" id="mastheadSearch">
-        <div class="ui container">
-            <div class="ui large secondary inverted pointing menu">
-                <a class="item"><img src="../public/assets/images/Stuffer_Logo_Main.png" height="45px" width="60px"></a>
-                <a class="item">Posted Stuff</a>
-                <a class="item">Borrowed Stuff</a>
-                <div class="right item">
-                        <a class="ui inverted button" style> Log in</a>
-                        <a class="ui inverted button">Sign Up</a>
-                </div>
-            </div>
+            <div class="ui inverted vertical center aligned segment" id="NavSearch" style>
+                    <div class="ui container">
+                        <div class="ui large secondary inverted pointing menu">
+                            <a class="item"> Home </a>
+                            <a class="active item">My Stuff</a>
+                            <a class="item">Borrowed Stuff</a>
+                            <!-- <a class="item">Contact</a>  -->
+                            <div class="right item">
+                                <a class="ui inverted button" style> Log in</a>
+                                <a class="ui inverted button">Sign Up</a>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
             <div class="ui container" id="searchContainer">
                     <div class="ui three column grid">
-                        <div class="row">
-                                <div class="five wide column">
+                        <div class="row" id="searchRow">
+                                <div class="two wide column"></div>
+                                <div class="seven wide column">
                                         <div class="ui category search">
                                                 <div class="ui icon input">
                                                     <input class="prompt" type="text" placeholder="Search Stuff...">
@@ -37,30 +42,28 @@
                                                     </div>
                                                     <div class="results"></div>
                                             </div>
-
                                 </div>
-    
-                                <div class="five wide column">
-                                        <div class="ui category search">
-                                                <div class="ui icon input">
-                                                <input class="prompt" type="text" placeholder="Search Category...">
-                                                <i class="search icon"></i>
-                                                </div>
-                                                <div class="results"></div>
-                                            </div>
+                                <div class="three wide column">
+                                    <div class="ui selection dropdown">
+                                        <input type="hidden" name="gender">
+                                        <i class="dropdown icon"></i>
+                                        <div class="default text">Category</div>
+                                        <div class="menu">
+                                            <div class="item" data-value="1">Male</div>
+                                            <div class="item" data-value="0">Female</div>
+                                        </div>
+                                        </div>
                                 </div>
     
                                 <div class="one wide column" id="searchButtonContainer">
-                                        <div class="ui huge primary button" >
+                                        <div class="ui large blue button" >
                                                 Search
                                     </div>
                                 </div>
-
                         </div>
                     </div>
-                </div> 
-        </div>        
-    </div> 
+                </div>   
+        </div> 
 
 
 <!-- insert cards row -->
@@ -70,13 +73,13 @@
                         <div class="column">
                             <div class="ui centered card three wide column">
                                     <div class="content">
-                                            <div class="left floated meta">Owned</div>
+                                            <!-- <div class="left floated meta">Owned</div> -->
                                             <img src="https://images.homedepot-static.com/productImages/a7e66f32-ae9c-440c-bb2c-53628ff60672/svn/milwaukee-power-tool-combo-kits-2997-23po-64_1000.jpg" width="200" height="200"/>
                                     </div>
                                     
                                     <div class="content">
                                         <span class="left floated" id="Description"> 
-                                            Description
+                                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ducimus tempora facilis reprehenderit libero, quam dolor, magni ut impedit sint distinctio facere perferendis error deserunt? Hic modi sequi vero reprehenderit quam!
                                         </span> 
                                     </div>
                                     
@@ -91,7 +94,7 @@
                         <div class="column">
                             <div class="ui centered card three wide column">
                                     <div class="content">
-                                            <div class="left floated meta">Owned</div>
+                                            <!-- <div class="left floated meta">Owned</div> -->
                                             <img src="https://images.homedepot-static.com/productImages/a7e66f32-ae9c-440c-bb2c-53628ff60672/svn/milwaukee-power-tool-combo-kits-2997-23po-64_1000.jpg" width="200" height="200"/>
                                     </div>
                                     
@@ -112,13 +115,14 @@
                         <div class="column">
                             <div class="ui centered card three wide column">
                                     <div class="content">
-                                            <div class="left floated meta">Owned</div>
+                                            <!-- <div class="left floated meta">Owned</div> -->
                                             <img src="https://images.homedepot-static.com/productImages/a7e66f32-ae9c-440c-bb2c-53628ff60672/svn/milwaukee-power-tool-combo-kits-2997-23po-64_1000.jpg" width="200" height="200"/>
                                     </div>
                                     
                                     <div class="content">
                                         <span class="left floated" id="Description"> 
-                                            Description
+                                                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ducimus tempora facilis reprehenderit libero, quam dolor, magni ut impedit sint distinctio facere perferendis error deserunt? Hic modi sequi vero reprehenderit quam!
+
                                         </span> 
                                     </div>
                                     
@@ -134,13 +138,14 @@
                     <div class="column">
                             <div class="ui centered card three wide column">
                                     <div class="content">
-                                            <div class="left floated meta">Owned</div>
+                                            <!-- <div class="left floated meta">Owned</div> -->
                                             <img src="https://images.homedepot-static.com/productImages/a7e66f32-ae9c-440c-bb2c-53628ff60672/svn/milwaukee-power-tool-combo-kits-2997-23po-64_1000.jpg" width="200" height="200"/>
                                     </div>
                                     
                                     <div class="content">
                                         <span class="left floated" id="Description"> 
-                                            Description
+                                                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ducimus tempora facilis reprehenderit libero, quam dolor, magni ut impedit sint distinctio facere perferendis error deserunt? Hic modi sequi vero reprehenderit quam!
+
                                         </span> 
                                     </div>
                                     
@@ -155,7 +160,7 @@
                     <div class="column">
                             <div class="ui centered card three wide column">
                                     <div class="content">
-                                            <div class="left floated meta">Owned</div>
+                                            <!-- <div class="left floated meta">Owned</div> -->
                                             <img src="https://images.homedepot-static.com/productImages/a7e66f32-ae9c-440c-bb2c-53628ff60672/svn/milwaukee-power-tool-combo-kits-2997-23po-64_1000.jpg" width="200" height="200"/>
                                     </div>
                                     
@@ -176,7 +181,7 @@
                     <div class="column">
                             <div class="ui centered card three wide column">
                                     <div class="content">
-                                            <div class="left floated meta">Owned</div>
+                                            <!-- <div class="left floated meta">Owned</div> -->
                                             <img src="https://images.homedepot-static.com/productImages/a7e66f32-ae9c-440c-bb2c-53628ff60672/svn/milwaukee-power-tool-combo-kits-2997-23po-64_1000.jpg" width="200" height="200"/>
                                     </div>
                                     
@@ -197,7 +202,6 @@
                     <div class="column">
                             <div class="ui centered card three wide column">
                                     <div class="content">
-                                            <div class="left floated meta">Owned</div>
                                             <img src="https://images.homedepot-static.com/productImages/a7e66f32-ae9c-440c-bb2c-53628ff60672/svn/milwaukee-power-tool-combo-kits-2997-23po-64_1000.jpg" width="200" height="200"/>
                                     </div>
                                     
