@@ -8,11 +8,13 @@
         <title>Stuffer</title>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css"> <!-- Semantic cdn for all-->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/components/button.css">
-        <link rel="stylesheet" href="../public/assets/css/styles.css" type="text/css">
-		<script src="https://code.jquery.com/jquery.js"></script>
-        <script src="../public/assets/js/app.js"></script>
+        <!-- <link rel="stylesheet" href="/assets/css/styles.css" type="text/css"> -->
+        <link rel="stylesheet" href="/css/styles" type="text/css">
+        <script src="https://code.jquery.com/jquery.js"></script>
 
-        <link rel="stylesheet" type="text/css" href="../dist/components/reset.css">
+        <!-- <script src="/js/app"></script> -->
+
+        <!-- <link rel="stylesheet" type="text/css" href="../dist/components/reset.css">
         <link rel="stylesheet" type="text/css" href="../dist/components/site.css">
       
         <link rel="stylesheet" type="text/css" href="../dist/components/container.css">
@@ -28,21 +30,22 @@
         <link rel="stylesheet" type="text/css" href="../dist/components/button.css">
         <link rel="stylesheet" type="text/css" href="../dist/components/list.css">
         <link rel="stylesheet" type="text/css" href="../dist/components/message.css">
-        <link rel="stylesheet" type="text/css" href="../dist/components/icon.css">
+        <link rel="stylesheet" type="text/css" href="../dist/components/icon.css"> -->
       
-        <script src="assets/library/jquery.min.js"></script>
+        <!-- <script src="assets/library/jquery.min.js"></script>
         <script src="../dist/components/form.js"></script>
-        <script src="../dist/components/transition.js"></script>
+        <script src="../dist/components/transition.js"></script> -->
         
-      </head>
+</head>
 
-      <body>
+<body>
 
             <div class="ui middle aligned center aligned grid">
               <div class="column">
                 <h2 class="ui grey image header">
                   <div class="content">
-                     <img src="../public/assets/images/Stuffer_Logo.png" width="50" height="50" href="index.html" alt="">Sign up to register       
+                     <!-- <img src="../public/assets/images/Stuffer_Logo.png" width="50" height="50" href="index.html" alt="">Sign up to register        -->
+                     <img id="logo" src="/image/stuffer" width="50" height="50" href="index.html" alt="">Sign up to register       
                   </div>
                 </h2>
                 <form class="ui large form">
@@ -51,17 +54,17 @@
                           <div class="field">
                             <div class="ui left icon input">
                               <i class="user icon"></i>
-                              <input type="text" name="email" placeholder="E-mail address">
+                              <input id="input-email" type="text" name="email" placeholder="E-mail address">
                             </div>
                           </div>
       
                           <div class="field">
                                   <div class="two fields">
                                     <div class="field">
-                                      <input type="text" name="shipping[first-name]" placeholder="First Name">
+                                      <input id="input-firstname" type="text" name="shipping[first-name]" placeholder="First Name">
                                     </div>
                                     <div class="field">
-                                      <input type="text" name="shipping[last-name]" placeholder="Last Name">
+                                      <input id="input-lastname" type="text" name="shipping[last-name]" placeholder="Last Name">
                                     </div>
                                   </div>
                                 </div>
@@ -85,7 +88,7 @@
                               <input type="password" name="password" placeholder="Password">
                             </div>
                           </div>
-                          <div class="ui fluid large basic blue submit button">Register</div>
+                          <div id="button-register" class="ui fluid large basic blue submit button">Register</div>
                         </div>
                   
                         <div class="ui error message"></div>
@@ -98,12 +101,8 @@
                   Already a member? <a href="#">Sign In</a>
                 </div>
               </div>
-            </div>
-            
-
-
-
-            
-            
-            
+            </div>                  
             </body>
+            <script src="/js/signup"></script>
+            <script src="/js/common"></script>
+</html>
