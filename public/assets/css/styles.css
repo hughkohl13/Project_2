@@ -106,13 +106,17 @@ Masthead block
     border: 1px solid rgba(34,36,38,.15);
 }
 
+.ui.stacked.segment {
+    padding-bottom: 1.4em;
+    padding: 10px;
+}
 
 /*****************
 search box styling 
 *****************/
 #mastheadSearch{
-    height: 6em;
-    margin-bottom: 3em;
+    height: 2.6em;
+    margin-bottom: 5em;
     /* background: url("../images/background_tools2.jpg");  */
     background: #FF8e00;
 }
@@ -128,7 +132,13 @@ search box styling
 #searchRow {
     padding-top: 15 px;
     padding-bottom: 0px;
-    font-size: 13px;
+    font-size: 16px;
+}
+
+#searchRow.sticky {
+    padding-top: 15 px;
+    padding-bottom: 0px;
+    font-size: 16px;
 }
 
 
@@ -137,16 +147,20 @@ search box styling
 }
 
 .ui.search {
-    font-size: 13px;
+    font-size: 16px;
 }
 
 .ui.icon.input>input {
-    padding-right: 18.67142857em!important;
+    padding-right: 3.67142857em!important;
 }
 
 #NavSearch {
         padding: 0px;
         margin-bottom: 2rem;
+}
+
+#searchBox {
+    margin-right: 18rem;
 }
 
 
