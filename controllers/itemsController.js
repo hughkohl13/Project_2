@@ -162,7 +162,8 @@ router.get('/items/image/:imageId', function(req, res) {
         }
         // res.send(data);
         // res.redirect("/items/"+data[0].ID);         
-        res.redirect("/items/page");         
+        // res.redirect("/items/page");         
+        res.redirect("/search/page");         
         // Send back the ID of the new todo
         // res.json({ id: result.insertId });
         // console.log({ id: result.insertId });

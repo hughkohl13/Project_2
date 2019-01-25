@@ -3,6 +3,11 @@ var path = require("path");
 // var app = express();
 var router = express.Router();
 
+// Html pages
+router.get('/signup/page', function(req, res) {
+  res.sendFile(path.join(__dirname, "./../public/signup.html"));
+  });
+
 // Front end Javascript
 router.get("/lib", function(req,res) {
   res.sendFile(path.join(__dirname, "./../public/assets/js/lib.js"));
@@ -15,6 +20,15 @@ router.get("/js/postitem", function(req,res) {
 });
 router.get("/js/index", function(req,res) {
   res.sendFile(path.join(__dirname, "./../public/assets/js/index.js"));
+});
+router.get("/js/signup", function(req,res) {
+  res.sendFile(path.join(__dirname, "./../public/assets/js/signup.js"));
+});
+router.get("/js/app", function(req,res) {
+  res.sendFile(path.join(__dirname, "./../public/assets/js/app.js"));
+});
+router.get("/js/common", function(req,res) {
+  res.sendFile(path.join(__dirname, "./../public/assets/js/common.js"));
 });
 
 // css
