@@ -18,138 +18,212 @@
     <div class="ui inverted vertical center aligned segment" id="mastheadSearch">
         <div class="ui container">
             <div class="ui large secondary inverted pointing menu">
-                <a class="item"><img src="../public/assets/images/Stuffer_Logo_Main.png" height="45px" width="50px"></a>
+                <a class="item"><img src="../public/assets/images/Stuffer_Logo_Main.png" height="45px" width="60px"></a>
+                <a class="item">Posted Stuff</a>
+                <a class="item">Borrowed Stuff</a>
                 <div class="right item">
-                    <a class="ui inverted button" style> Log in</a>
-                    <a class="ui inverted button">Sign Up</a>
+                        <a class="ui inverted button" style> Log in</a>
+                        <a class="ui inverted button">Sign Up</a>
                 </div>
             </div>
-        </div>
-        <div class="ui container stackable grid">
-            <div class="two wide column"></div>
-            <div class="four wide column">
-                    <div class="ui category search">
-                        <div class="ui icon input">
-                            <input class="prompt" type="text" placeholder="Search Stuff...">
-                            <i class="search icon"></i>
-                            </div>
-                            <div class="results"></div>
-                    </div>
-            </div>
-            <div class="four wide column">
-                    <div class="ui category search">
-                            <div class="ui icon input">
-                            <input class="prompt" type="text" placeholder="Search Category...">
-                            <i class="search icon"></i>
-                            </div>
-                            <div class="results"></div>
+            <div class="ui container" id="searchContainer">
+                    <div class="three wide column">
+                        <div class="row">
+
+                                <div class="column">
+                                        <div class="ui category search">
+                                                <div class="ui icon input">
+                                                    <input class="prompt" type="text" placeholder="Search Stuff...">
+                                                    <i class="search icon"></i>
+                                                    </div>
+                                                    <div class="results"></div>
+                                            </div>
+                                </div>
+    
+                                <div class="column">
+                                        <div class="ui category search">
+                                                <div class="ui icon input">
+                                                <input class="prompt" type="text" placeholder="Search Category...">
+                                                <i class="search icon"></i>
+                                                </div>
+                                                <div class="results"></div>
+                                            </div>
+                                </div>
+    
+                                <div class="column">
+                                        <div class="ui huge primary button right aligned" id="searchButton">
+                                                Search
+                                    </div>
+                                </div>
+
                         </div>
-            </div>
-            <div class="two wide column">
-                    <div class="ui huge primary button right aligned" id="searchButton">
-                            Search
+                    </div>
+                </div> 
+        </div>        
+    </div> 
+
+
+<!-- insert cards row -->
+    <div id="cardcontainer">
+        <div class="ui three column grid">
+                <div class="row">
+                        <div class="column">
+                            <div class="ui centered card three wide column">
+                                    <div class="content">
+                                            <div class="left floated meta">Owned</div>
+                                            <img src="https://images.homedepot-static.com/productImages/a7e66f32-ae9c-440c-bb2c-53628ff60672/svn/milwaukee-power-tool-combo-kits-2997-23po-64_1000.jpg" width="200" height="200"/>
+                                    </div>
+                                    
+                                    <div class="content">
+                                        <span class="left floated" id="Description"> 
+                                            Description
+                                        </span> 
+                                    </div>
+                                    
+                                    <div class="content">
+                                        <span class="right floated">
+                                            <button class="circular ui blue button" id="borrowButton">Borrow</button>
+                                        </span>
+                                    </div>
+                                </div>
+                        </div>
+            
+                        <div class="column">
+                            <div class="ui centered card three wide column">
+                                    <div class="content">
+                                            <div class="left floated meta">Owned</div>
+                                            <img src="https://images.homedepot-static.com/productImages/a7e66f32-ae9c-440c-bb2c-53628ff60672/svn/milwaukee-power-tool-combo-kits-2997-23po-64_1000.jpg" width="200" height="200"/>
+                                    </div>
+                                    
+                                    <div class="content">
+                                        <span class="left floated" id="Description"> 
+                                            Description
+                                        </span> 
+                                    </div>
+                                    
+                                    <div class="content">
+                                        <span class="right floated">
+                                                <button class="circular ui blue button" id="borrowButton">Borrow</button>
+                                        </span>
+                                    </div>
+                                </div>
+                        </div>
+            
+                        <div class="column">
+                            <div class="ui centered card three wide column">
+                                    <div class="content">
+                                            <div class="left floated meta">Owned</div>
+                                            <img src="https://images.homedepot-static.com/productImages/a7e66f32-ae9c-440c-bb2c-53628ff60672/svn/milwaukee-power-tool-combo-kits-2997-23po-64_1000.jpg" width="200" height="200"/>
+                                    </div>
+                                    
+                                    <div class="content">
+                                        <span class="left floated" id="Description"> 
+                                            Description
+                                        </span> 
+                                    </div>
+                                    
+                                    <div class="content">
+                                        <span class="right floated">
+                                                <button class="circular ui blue button" id="borrowButton">Borrow</button>
+                                        </span>
+                                    </div>
+                                </div>
+                        </div>
+            
+                    </div>
+                    <div class="column">
+                            <div class="ui centered card three wide column">
+                                    <div class="content">
+                                            <div class="left floated meta">Owned</div>
+                                            <img src="https://images.homedepot-static.com/productImages/a7e66f32-ae9c-440c-bb2c-53628ff60672/svn/milwaukee-power-tool-combo-kits-2997-23po-64_1000.jpg" width="200" height="200"/>
+                                    </div>
+                                    
+                                    <div class="content">
+                                        <span class="left floated" id="Description"> 
+                                            Description
+                                        </span> 
+                                    </div>
+                                    
+                                    <div class="content">
+                                        <span class="right floated">
+                                                <button class="circular ui blue button" id="borrowButton">Borrow</button>
+                                        </span>
+                                    </div>
+                                </div>
+                    </div>
+            
+                    <div class="column">
+                            <div class="ui centered card three wide column">
+                                    <div class="content">
+                                            <div class="left floated meta">Owned</div>
+                                            <img src="https://images.homedepot-static.com/productImages/a7e66f32-ae9c-440c-bb2c-53628ff60672/svn/milwaukee-power-tool-combo-kits-2997-23po-64_1000.jpg" width="200" height="200"/>
+                                    </div>
+                                    
+                                    <div class="content">
+                                        <span class="left floated" id="Description"> 
+                                            Description
+                                        </span> 
+                                    </div>
+                                    
+                                    <div class="content">
+                                        <span class="right floated">
+                                                <button class="circular ui blue button" id="borrowButton">Borrow</button>
+                                            </span>
+                                    </div>
+                                </div>
+                    </div>
+            
+                    <div class="column">
+                            <div class="ui centered card three wide column">
+                                    <div class="content">
+                                            <div class="left floated meta">Owned</div>
+                                            <img src="https://images.homedepot-static.com/productImages/a7e66f32-ae9c-440c-bb2c-53628ff60672/svn/milwaukee-power-tool-combo-kits-2997-23po-64_1000.jpg" width="200" height="200"/>
+                                    </div>
+                                    
+                                    <div class="content">
+                                        <span class="left floated" id="Description"> 
+                                            Description
+                                        </span> 
+                                    </div>
+                                    
+                                    <div class="content">
+                                        <span class="right floated">
+                                                <button class="circular ui blue button" id="borrowButton">Borrow</button>
+                                            </span>
+                                    </div>
+                                </div>
+                    </div>
+            
+                    <div class="column">
+                            <div class="ui centered card three wide column">
+                                    <div class="content">
+                                            <div class="left floated meta">Owned</div>
+                                            <img src="https://images.homedepot-static.com/productImages/a7e66f32-ae9c-440c-bb2c-53628ff60672/svn/milwaukee-power-tool-combo-kits-2997-23po-64_1000.jpg" width="200" height="200"/>
+                                    </div>
+                                    
+                                    <div class="content">
+                                        <span class="left floated" id="Description"> 
+                                            Description
+                                        </span> 
+                                    </div>
+                                    
+                                    <div class="content">
+                                        <span class="right floated">
+                                                <button class="circular ui blue button" id="borrowButton">Borrow</button>
+                                            </span>
+                                    </div>
+                                </div>
+                    </div>
                 </div>
             </div>
-        </div> 
-    </div>  
-</div>      
-    <div class="ui vertical stripe segment middle aligned">
-        </div> 
-        <div class="row">
-            
-        </div>
     </div>
-
-<script type="text/javascript">
-$('#searchButton').on("click", function(){
-    $.ajax({
-    url: "/search",
-    method: "GET"
-}).then(function(res){
-    console.log(res);
-})
-})
-
-
-</script>    
-               <!-- CARDS-->
-
-           <!-- Owned -->
-
-    <!-- <div class="ui card">
-        <div class="content">
-                <img src=https://images.homedepot-static.com/productImages/a7e66f32-ae9c-440c-bb2c-53628ff60672/svn/milwaukee-power-tool-combo-kits-2997-23po-64_1000.jpg" width="200" height="200"/>
-            <div class="left floated meta">Owned</div>
-        </div>
-        
-        <div class="content">
-            <span class="left floated"> 
-            <i class="heart outline like icon"></i>
-             Description
-            </span> 
-            <i class="comment icon"></i>
-            3 comments 
-        </div>
-        
-        <div class="content">
-            <span class="right floated">
-                <button class="circular ui basic button">Edit</button>
-                <button class="circular ui basic button">Delete</button>
-            </span>
-        </div>
-        
-        </div>
-        
-        Borrowed 
-        
-        <div class="ui card">
-            <div class="content">
-                    <img src=https://images.homedepot-static.com/productImages/a7e66f32-ae9c-440c-bb2c-53628ff60672/svn/milwaukee-power-tool-combo-kits-2997-23po-64_1000.jpg" width="200" height="200"/>
-                <div class="right floated meta">Borrowed</div>
-            </div>
-        
-            <div class="content">
-                <span class="left floated"> 
-                <i class="heart outline like icon"></i>
-                Description
-                </span>
-                <i class="comment icon"></i>
-                3 comments
-            </div>
-        
-            <div class="content">
-                    <button class="ui toggle orange button active"> Borrow</button>
-                    </div>
-        
-        </div> -->
-</div>
-
-
-
-
-<!-- Post stuff and get stuff boxes inside a background container -->
-
-
-
- 
-
-<!-- Search for objects -->
-
-<!-- <div class="ui category search">
-        <div class="ui icon input">
-            <input class="prompt" type="text" placeholder="Search animals...">
-            <i class="search icon"></i>
-        </div>
-    <div class="results"></div>
-</div> -->
+</div>    
 
 
     
-<script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js">
+               
 
 
-</script> 
-<!-- Semantic for cdnjs -->
 </body>
 
 <script src="/js/search"></script>

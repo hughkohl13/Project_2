@@ -2,49 +2,60 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" type="text/css">
-		<link rel="stylesheet" href="/assets/css/styles.css" type="text/css" />
-		<title>Stuffer</title>
-		<script src="https://code.jquery.com/jquery.js"></script>
-    <!-- <script src="/js/stuffer"></script> -->
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" type="text/css"> -->
+    <title>Stuffer</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css"> <!-- Semantic cdn for all-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/components/button.css">
+    <link rel="stylesheet" href="assets/css/styles.css" type="text/css">
+    <script src="https://code.jquery.com/jquery.js"></script>
     <script src="/js/postitem"></script>
 </head>
 
 <body>
-<nav class="navbar navbar-expand-md navbar-light bg-light">
-    <!-- navbar items on the left -->
-    <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
-        <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-                <img src="/image/stuffer" width="30" height="30" class="d-inline-block align-top" href="index.html" alt="">
-            </li>
-        </ul>
-    </div>
-</nav>
+<div class="pusher">
+        <div class="ui inverted vertical center aligned segment" style>
+            <div class="ui container">
+                <div class="ui large secondary inverted pointing menu">
+                    <!-- <a class="item"><img src="../public/assets/images/Stuffer_Logo_Main.png" height="45px" width="50px"></a> -->
+                    <a class="item"><img src="/image/stuffer" height="45px" width="50px"></a>
+                    <a class="item">Posted Stuff</a>
+                    <a class="item">Borrowed Stuff</a>
+                    <!-- <a class="item">Contact</a>  -->
+                    <div class="right item">
+                        <a class="ui inverted button" style> Log in</a>
+                        <a class="ui inverted button">Sign Up</a>
+                    </div>
+                </div>
+            </div>
+        </div> 
+    </div>     
+
 
 <!-- Post stuff and get stuff boxes inside a background container -->
+
 <div class="container-fluid" id="post">
         <!-- <form class="form-inline" action="/post" method='post' id='post-form'> -->
-        <form id="addItem" action="/images" method="post" enctype="multipart/form-data">          
+        <form class="ui large form" id="addItem" action="/images" method="post" enctype="multipart/form-data">         
             <!-- <input class="form-control mr-sm-2" id="Image" type="image" placeholder="Image" aria-label="Search"> -->
-            <h2>Post an item to Stuffer</h2>
+            <div class="content">
+                    <h2 class="ui grey image header"> Post an item   </h2>  
+            </div>
             <h5>Category</h5>
             <select class="chosen-select" id="select-category">
             </select>
             <br>
             <br>
-            <input class="form-control mr-sm-2" id="item-name" type="text" placeholder="Name" aria-label="Search">
+            <input class="field" id="item-name" type="text" placeholder="Name" aria-label="Search">
             <!-- <input class="form-control mr-sm-2" id="Category" type="text" placeholder="Category" aria-label="Search"> -->
             <br>
-            <input class="form-control mr-sm-2" id="description" type="text" placeholder="Description" aria-label="Search">
+            <input class="field" id="description" type="text" placeholder="Description" aria-label="Search">
             <br>
             <h5>Upload an image</h5>
             <input type="file" id="input-file" name="avatar" /> 
             <br>
-            <center>
-              <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Post</button>
-            </center>
-            </form>
+              <button class="ui fluid large basic blue submit button" type="submit" id="postButton">Post</button>
+        </form>
 </div>
 <!-- <iframe src="/item/page"></iframe> -->
 </body>

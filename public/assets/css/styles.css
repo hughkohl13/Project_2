@@ -18,8 +18,10 @@ p {
     color: rgba(255, 255, 255, 0.9);
 }
 
+
 .ui.inverted.segment {
-    background: url("../images/background_tools.jpeg");
+    /* background: url("../images/background_tools.jpeg"); */
+    background-color: #ff8e00;
     opacity: 0.9;
     border: none;
     -webkit-box-shadow: none;
@@ -37,9 +39,14 @@ p {
     color: rgba(0, 0, 0, 0.87);
 }
 
-/* 
+/*****************
 Masthead block 
-*/
+*****************/
+
+#masthead {
+    background: url("../images/background_tools.jpeg"); 
+}
+
 .masthead .ui.menu .ui.button {
     margin-left: 0.5em;
 }
@@ -61,16 +68,28 @@ Masthead block
     padding: 1em 0em;
 }
 
+.ui.inverted.button {
+    -webkit-box-shadow: 0px 0px 0px 2px #FFFFFF inset !important;
+    box-shadow: 0px 0px 0px 2px #FF8e00 inset !important;
+    /* background: transparent none; */
+    color: white;
+    text-shadow: none !important;
+}
 
-/* 
+
+/*****************
 search box styling 
-*/
+*****************/
 #mastheadSearch{
     height: 14em;
+    /* background: url("../images/background_tools.jpeg");  */
 }
 
 #searchContainer {
-
+    margin-left: 10%;
+    margin-right: 10%;
+    padding-left: 10%;
+    padding-right: 10%;
 }
 
 #topSegment-Search {
@@ -79,12 +98,13 @@ search box styling
 
 
 
-/* 
+
+/* ****************
 .ui customizations 
-*/
+*****************/
 
 .ui.large.menu {
-    font-size: 1.3142857rem;
+    font-size: 1.1142857rem;
 }
 
 
@@ -164,7 +184,9 @@ search box styling
 }
 
 
-/* grid css */
+/*****************
+grid css 
+*****************/
 .ui.grid > .row > [class*="six wide"].column, .ui.grid > .column.row > [class*="six wide"].column, .ui.grid > [class*="six wide"].column, .ui.column.grid > [class*="six wide"].column {
     width: 37.5% !important;
 }
@@ -193,11 +215,11 @@ search box styling
 }
 
 .ui.grid>.column:not(.row) {
-    padding-top: 5rem;
+    padding-top: 0rem;
     padding-bottom: 5rem;
     padding-left: 1rem;
     padding-right: 1rem;
-    margin: 1rem;
+    margin: 0rem;
 }
 
 .ui.centered.grid>.column:not(.aligned):not(.justified):not(.row), .ui.centered.grid>.row>.column:not(.aligned):not(.justified), .ui.grid .centered.row>.column:not(.aligned):not(.justified) {
@@ -220,9 +242,25 @@ search box styling
 }
 
 
-/* 
+/***************** 
+button styling
+*****************/
+
+#borrowButton:hover {
+    background: #FF8e00;
+}
+
+/* #editButton:hover {
+    background: green;
+} */
+
+/* #deleteButton:hover {
+    background: red;
+}  */
+
+/* ****************
 Sign up and Login forms 
-*/
+*****************/
 
 .ui.form {
     position: relative;
@@ -236,17 +274,54 @@ Sign up and Login forms
     margin-left: 33.3%;
 }
 
-/* Sign up */
 
-/* body {
-    background-color: #ff8e00;
-  }
-  body > .grid {
-    height: 100%;
-  }
-  .image {
-    margin-top: -100px;
-  }
-  .column {
-    max-width: 450px;
-  } */
+
+/* ****************
+card styling 
+*****************/
+
+#cardcontainer {
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+
+/*****************
+post box 
+*****************/
+
+#post {
+    margin-top: 30px;
+}
+
+#addItem {
+    width: 450px;
+}
+
+#item-name {
+    margin-bottom: 20px;
+}
+
+#postButton {
+    margin-top: 20px;
+}
+
+/*****************
+edit item 
+*****************/
+
+#edit {
+    margin-top: 30px;
+}
+
+#editItem {
+    width: 450px;
+}
+
+#item-name {
+    margin-bottom: 20px;
+}
+
+#editButton {
+    margin-top: 20px;
+}
