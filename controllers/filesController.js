@@ -82,6 +82,9 @@ router.get("/image/sharing", function(req,res) {
 router.get("/image/concrete", function(req,res) {
   res.sendFile(path.join(__dirname, "./../public/assets/images/concrete_seamless.png"));
 });
+router.get("/image/signup", function(req,res) {
+  res.sendFile(path.join(__dirname, "./../public/assets/images/background_tools3.jpg"));
+});
 router.get("/uploads/:image", function(req,res) {
   console.log(req.params);
   res.sendFile(path.join(__dirname, "./../uploads/"+req.params.image));
