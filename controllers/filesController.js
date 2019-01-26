@@ -4,11 +4,35 @@ var path = require("path");
 var router = express.Router();
 
 // Html pages
+router.get('/', function(req, res) {
+  // res.send('Hello from api GET all burgers route.');
+  res.sendFile(path.join(__dirname, "./../public/index.html"));
+  });
+router.get('/login', function(req, res) {
+// res.send('Hello from api GET all burgers route.');
+res.sendFile(path.join(__dirname, "./../public/login.html"));
+});
+router.get('/postitem/page', function(req, res) {
+// res.send('Hello from api items route.');
+res.sendFile(path.join(__dirname, "./../public/postitem.html"));
+});
 router.get('/signup/page', function(req, res) {
   res.sendFile(path.join(__dirname, "./../public/signup.html"));
   });
+router.get('/borrowed/page', function(req, res) {
+  res.sendFile(path.join(__dirname, "./../public/borrowed.html"));
+  });
+router.get('/owned/page', function(req, res) {
+  res.sendFile(path.join(__dirname, "./../public/owned.html"));
+  });
+router.get('/items/page', function(req, res) {
+  res.sendFile(path.join(__dirname, "./../public/items.html"));
+  });
 
 // Front end Javascript
+router.get("/js/owned", function(req,res) {
+  res.sendFile(path.join(__dirname, "./../public/assets/js/owned.js"));
+});
 router.get("/lib", function(req,res) {
   res.sendFile(path.join(__dirname, "./../public/assets/js/lib.js"));
 });
@@ -41,6 +65,7 @@ router.get("/css/style", function(req,res) {
 router.get("/css/styles", function(req,res) {
   res.sendFile(path.join(__dirname, "./../public/assets/css/styles.css"));
 });
+
 // Images
 router.get("/image/stuffer", function(req,res) {
   res.sendFile(path.join(__dirname, "./../public/assets/images/Stuffer_Logo_Main.png"));
@@ -61,4 +86,5 @@ router.get("/uploads/:image", function(req,res) {
   console.log(req.params);
   res.sendFile(path.join(__dirname, "./../uploads/"+req.params.image));
 });
+
 module.exports = router;

@@ -1,5 +1,17 @@
-function getItems() {
-  var queryURL = '/items/owned';
+function getItems(categoryId,searchText) {
+  if (searchText){
+    var queryURL = '/items/owned/text/'+searchText;  
+    // alert("Search by text!");
+   }
+  else
+   {
+    if (categoryId){
+      var queryURL = '/items/owned/'+categoryId;  
+     }
+    else{
+       var queryURL = '/items/owned';
+    }
+  }
   console.log(queryURL);
   $.ajax({
     url: queryURL,
@@ -31,14 +43,20 @@ function getItems() {
       // newDiv3.text("Owned");
       var newSpan1= $("<span>");
       newSpan1.addClass("left floated");
-      newSpan1.text(response[i].DESCRIPTION);
+      newSpan1.text(response[i].CATEGORY_NAME);    
       var newSpan2= $("<span>");
-      newSpan2.addClass("right floated");
+      newSpan2.addClass("left floated");
+      newSpan2.text(response[i].DESCRIPTION);
+      var newSpan3= $("<span>");
+      newSpan3.addClass("right floated");     
+      newSpan3.text(response[i].ITEM_NAME);             
+      // var newSpan2= $("<span>");
+      // newSpan2.addClass("right floated");
   
-      var newButton = $("<button>");
-      newButton.addClass("circular ui blue button");
-      newButton.text("Borrow");
-      newButton.attr("id", response[i].ITEM_NAME);
+      // var newButton = $("<button>");
+      // newButton.addClass("circular ui blue button");
+      // newButton.text("Borrow");
+      // newButton.attr("id", response[i].ITEM_NAME);
 
       var newA = $("<a>");
       newA.attr("href","/items/page");         
@@ -64,7 +82,8 @@ function getItems() {
       newDivContent1.append(newDiv3);
       newDivContent1.append(newA);
       newDivContent2.append(newSpan1); 
-      newSpan2.append(newButton);
+      newDivContent2.append(newSpan3); 
+      // newSpan2.append(newButton);
       newDivContent3.append(newSpan2);
       newDiv2.append(newDivContent1);
       newDiv2.append(newDivContent2);
@@ -132,9 +151,19 @@ $(document).ready(function() {
     $("#searchButtonContainer").on("click", function(){
       // alert("Clicked search button");
       getItems();
-      // location.address("/postitem/page");
     //   location.replace("/postitem/page");
     });
-
+    $("#select-category").on("change", function(){
+      // alert("Changed Category to "+$("#select-category").val());
+      getItems($("#select-category").val());
+      // location.replace("/postitem/page");
+    // $("#select-category").val(),
+    });   
+    $("#search-text").on("keyup", function(){
+      // alert("Key is Up!"+$("#search-text").val());
+      var categoryId;
+      getItems(categoryId,$("#search-text").val());
+    //   location.replace("/postitem/page");
+    });
     getCategories();
 });

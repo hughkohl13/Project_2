@@ -6,7 +6,7 @@
         <title>Stuffer</title>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css"> <!-- Semantic cdn for all-->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/components/button.css">
-        <link rel="stylesheet" href="assets/css/styles.css" type="text/css" />
+        <link rel="stylesheet" href="/css/styles" type="text/css" />
 		    <script src="https://code.jquery.com/jquery.js"></script>
         <script src="/js/index"></script>
 </head>
@@ -17,20 +17,26 @@
     <div class="ui inverted vertical masthead center aligned segment" id="masthead" style>
         <div class="ui container">
             <div class="ui large secondary inverted pointing menu">
-                <a class="active item"> Home </a>
-                <a class="item">My Stuff</a>
-                <a class="item">Borrowed Stuff</a> 
+                <a id="logo" class="active item"> Home </a>
+                <a id="search-owned" class="item">My Stuff</a>
+                <a id="search-borrowed" class="item">Borrowed Stuff</a> 
                 <!-- <a class="item">Contact</a>  -->
                 <div class="right item">
-                    <a class="ui inverted button" style> Log in</a>
-                    <a class="ui inverted button">Sign Up</a>
+                    <a id="button-login" class="ui inverted button" style> Log in</a>
+                    <a id="button-signup" class="ui inverted button">Sign Up</a>
                 </div>
             </div>
         </div>
         <div class="ui text Container" style>
-            <h1 class="ui inverted header" style>
+            <h1 id="greetingOne" class="header2" style>
+              
+            </h1>
+            <h1 id="greeting" class="ui inverted header" style>
                 Stuffer
             </h1>
+            <h1 id="greetingTwo" class="header2" style>
+              
+            </h1>            
             <!-- <h2 style> Just Stuff it!</h2> -->
             <div id ="button-post" class="ui huge primary button">
                 <i class="left arrow icon">
@@ -74,5 +80,6 @@
 </div>
 </body>
 <script src="/js/index"></script>
+<script src="/js/common"></script>
 
 </html>
