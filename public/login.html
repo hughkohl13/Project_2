@@ -10,7 +10,7 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/components/button.css">
         <link rel="stylesheet" href="/css/styles" type="text/css">
 		<script src="https://code.jquery.com/jquery.js"></script>
-        <script src="/js/app.js"></script>
+        <script src="/js/login"></script>
 
         <link rel="stylesheet" type="text/css" href="../dist/components/reset.css">
         <link rel="stylesheet" type="text/css" href="../dist/components/site.css">
@@ -57,7 +57,7 @@
                         <input type="password" name="password" placeholder="Password">
                       </div>
                     </div>
-                    <div class="ui fluid large basic blue submit button">Login</div>
+                    <div class="ui fluid large basic blue submit button" id="home-redirect">Login</div>
                   </div>
             
                   <div class="ui error message"></div>
@@ -65,7 +65,7 @@
                 </form>
             
                 <div class="ui message">
-                  New to us? <a href="#">Sign Up</a>
+                  New to us? <a id="button-signup">Sign Up</a>
                 </div>
               </div>
             </div>
