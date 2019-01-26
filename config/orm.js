@@ -75,6 +75,32 @@ var orm = {
         cb(result);
       });
       },
+    selectItemsOwnedCatId: function(categoryId, cb){
+      var queryString = "SELECT I.ITEM_NAME, I.DESCRIPTION, C.NAME CATEGORY_NAME, IM.PATH IMAGE_PATH, IM.NAME IMAGE_NAME FROM ITEMS I INNER JOIN CATEGORIES C ON (C.ID = I.CATEGORY_ID) LEFT JOIN IMAGES IM ON (IM.ID = I.IMAGE_ID) WHERE OWNER_ID = 1 AND CATEGORY_ID = ? ORDER BY I.CREATEDAT DESC";
+      
+      console.log(queryString);
+      connection.query(queryString, [categoryId], function(err, result) {
+        if (err) {
+          throw err;
+        }
+    
+        cb(result);
+      });
+      },
+    selectItemsOwnedText: function(searchText, cb){
+      // var queryString = "SELECT I.ITEM_NAME, I.DESCRIPTION, C.NAME CATEGORY_NAME, IM.PATH IMAGE_PATH, IM.NAME IMAGE_NAME FROM ITEMS I INNER JOIN CATEGORIES C ON (C.ID = I.CATEGORY_ID) LEFT JOIN IMAGES IM ON (IM.ID = I.IMAGE_ID) WHERE OWNER_ID = 1 AND (LOWER(I.ITEM_NAME) LIKE ? OR LOWER(I.DESCRIPTION) LIKE ?) ORDER BY I.CREATEDAT DESC";
+      var queryString = "SELECT I.ITEM_NAME, I.DESCRIPTION, C.NAME CATEGORY_NAME, IM.PATH IMAGE_PATH, IM.NAME IMAGE_NAME FROM ITEMS I INNER JOIN CATEGORIES C ON (C.ID = I.CATEGORY_ID) LEFT JOIN IMAGES IM ON (IM.ID = I.IMAGE_ID) WHERE OWNER_ID = 1 AND (LOWER(I.DESCRIPTION) LIKE ? OR LOWER(I.ITEM_NAME) LIKE ? ) ORDER BY I.CREATEDAT DESC";
+      console.log(queryString);
+      var lowerText = '%'+searchText.toLowerCase()+'%';
+      console.log(lowerText);
+      connection.query(queryString, [lowerText,lowerText], function(err, result) {
+        if (err) {
+          throw err;
+        }
+    
+        cb(result);
+      });
+      },
     selectItemsBorrowed: function(cb){
       var queryString = "SELECT I.ITEM_NAME, C.NAME CATEGORY_NAME, IM.NAME IMAGE_NAME FROM ITEMS I INNER JOIN CATEGORIES C ON (C.ID = I.CATEGORY_ID) LEFT JOIN IMAGES IM ON (IM.ID = I.IMAGE_ID)";
       

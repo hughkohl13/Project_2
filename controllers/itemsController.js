@@ -13,40 +13,6 @@ var categories = require("../models/categories.js");
 var app = express();
 var router = express.Router();
 
-var exphbs = require("express-handlebars");
-// Set Handlebars as the default templating engine.
-app.engine("handlebars", exphbs({ defaultLayout: "main" }));
-app.set("view engine", "handlebars");
-
-router.get('/', function(req, res) {
-    // res.send('Hello from api GET all burgers route.');
-    res.sendFile(path.join(__dirname, "./../public/index.html"));
-    // burger.all(function(data) {
-    //           var dataObj = {
-    //             burger: data
-    //           };
-    //           console.log(dataObj);
-    //           res.render("index", {
-    //             foods: dataObj.burger,
-    //             eater: "Gilles"
-    //         });
-    //   });
-    });
-
-router.get('/login', function(req, res) {
-  // res.send('Hello from api GET all burgers route.');
-  res.sendFile(path.join(__dirname, "./../public/login.html"));
-  });
-
-router.get('/postitem/page', function(req, res) {
-  // res.send('Hello from api items route.');
-  res.sendFile(path.join(__dirname, "./../public/postitem.html"));
-    // items.get(function(data) {
-    //           console.log(data);
-    //           res.send(data);
-    //   });
-  });
-
 router.get('/categories', function(req, res) {
   // res.send('Hello from api items route.');
   // res.sendFile(path.join(__dirname, "./../public/assets/index.html"));
@@ -123,16 +89,22 @@ router.get('/items/owned', function(req, res) {
                   res.send(data);
       });
   });
-
-router.get('/items/page', function(req, res) {
+router.get('/items/owned/:categoryId', function(req, res) {
   // res.send('Hello from api items route.');
-  res.sendFile(path.join(__dirname, "./../public/items.html"));
-    // items.get(function(data) {
-    //           console.log(data);
-    //           res.send(data);
-    //   });
+    items.getOwnedCatId(req.params.categoryId
+                 ,function(data) {
+                  console.log(data);
+                  res.send(data);
+      });
   });
-
+  router.get('/items/owned/text/:searchText', function(req, res) {
+    // res.send('Hello from api items route.');
+      items.getOwnedText(req.params.searchText
+                   ,function(data) {
+                    console.log(data);
+                    res.send(data);
+        });
+    });
 router.get('/items/:itemId', function(req, res) {
   // res.send('Hello from api images route.');
   // res.sendFile(path.join(__dirname, "./../public/assets/index.html"));
@@ -163,7 +135,7 @@ router.get('/items/image/:imageId', function(req, res) {
         // res.send(data);
         // res.redirect("/items/"+data[0].ID);         
         // res.redirect("/items/page");         
-        res.redirect("/search/page");         
+        res.redirect("/owned/page");         
         // Send back the ID of the new todo
         // res.json({ id: result.insertId });
         // console.log({ id: result.insertId });

@@ -146,7 +146,8 @@ if (document.getElementById('input-file').files[0])
 }
 else {
   event.preventDefault();
-  location.reload();
+  // location.reload();
+  location.replace("/owned/page");
 }
 
 // alert("imageId="+imageId);

@@ -19,6 +19,16 @@ var items = {
       cb(res);
     });
   },
+  getOwnedCatId: function(categoryId, cb) {
+    orm.selectItemsOwnedCatId(categoryId, function(res) {
+      cb(res);
+    });
+  },
+  getOwnedText: function(searchText, cb) {
+    orm.selectItemsOwnedText(searchText, function(res) {
+      cb(res);
+    });
+  },
   getId: function(itemId,cb) {
     orm.selectItemId(itemId,function(res) {
       cb(res);
