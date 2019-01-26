@@ -6,15 +6,19 @@ $(document).ready(function() {
   //   location.replace("/postitem/page");
   // });
   $("#button-borrow").on("click", function(){
-    alert("Clicked Borrow");
+    // alert("Clicked Borrow");
     // location.address("/postitem/page");
-    location.replace("/borrowitem/page");
+    location.replace("/search");
   });
   $("#button-signup").on("click", function(){
     // alert("Clicked signup");
     // location.address("/postitem/page");
     location.replace("/signup/page");
   });
+  $('#button-login').on("click", function(){
+    // alert("Clicked login");
+    location.replace("/login");
+  })
   window.onload = function(){
     if(localStorage.userId) {
         // this will only work if the token is set in the localStorage

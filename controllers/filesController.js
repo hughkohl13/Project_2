@@ -7,7 +7,11 @@ var router = express.Router();
 router.get('/', function(req, res) {
   // res.send('Hello from api GET all burgers route.');
   res.sendFile(path.join(__dirname, "./../public/index.html"));
-  });
+});
+router.get('/home', function(req, res) {
+  // res.send('Hello from api GET all burgers route.');
+  res.sendFile(path.join(__dirname, "./../public/index.html"));
+});
 router.get('/login', function(req, res) {
 // res.send('Hello from api GET all burgers route.');
 res.sendFile(path.join(__dirname, "./../public/login.html"));
@@ -27,6 +31,9 @@ router.get('/owned/page', function(req, res) {
   });
 router.get('/items/page', function(req, res) {
   res.sendFile(path.join(__dirname, "./../public/items.html"));
+  });
+router.get('/search', function(req, res) {
+  res.sendFile(path.join(__dirname, "./../public/search.html"));
   });
 
 // Front end Javascript
@@ -53,6 +60,9 @@ router.get("/js/app", function(req,res) {
 });
 router.get("/js/common", function(req,res) {
   res.sendFile(path.join(__dirname, "./../public/assets/js/common.js"));
+});
+router.get("/js/login", function(req,res) {
+  res.sendFile(path.join(__dirname, "./../public/assets/js/login.js"));
 });
 
 // css
@@ -81,6 +91,9 @@ router.get("/image/sharing", function(req,res) {
 });
 router.get("/image/concrete", function(req,res) {
   res.sendFile(path.join(__dirname, "./../public/assets/images/concrete_seamless.png"));
+});
+router.get("/image/signup", function(req,res) {
+  res.sendFile(path.join(__dirname, "./../public/assets/images/background_tools3.jpg"));
 });
 router.get("/uploads/:image", function(req,res) {
   console.log(req.params);
